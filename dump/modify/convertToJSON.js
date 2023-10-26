@@ -80,7 +80,7 @@ files.forEach(async ({ filename, columns }) => {
   })
 
   return fs.promises.writeFile(
-    path.join(__dirname, '../json', `${filename}.json`),
+    path.join(__dirname, '../../_data', `${filename}.json`),
     JSON.stringify(json, null, 2)
   )
 })

@@ -1,0 +1,60 @@
+#jq-content {
+  padding: 2em 1em;
+}
+
+.wiki, .wiki a {
+  font-size: 0.8125rem;
+}
+
+.breadcrumbs-nav {
+  position: absolute;
+  top: 0.625em;
+  left: 1em;
+  gap: 0.25em;
+}
+.breadcrumbs-nav-first[href],
+.breadcrumbs-nav-first[href]:visited {
+  color: #998;
+}
+.breadcrumbs-nav a {
+  font-size: 0.625rem;
+}
+
+.wiki-content {
+  padding: 1em 1.5em;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.wiki-content h2,
+.wiki-content h3,
+.wiki-content h4,
+.wiki-content h5,
+.wiki-content h6 {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 1em 0 0.5em;
+}
+
+.wiki-content h1 {
+  font-size: 1.1rem;
+}
+.wiki-content h2 {
+  font-size: 1rem;
+}
+.wiki-content h3 {
+  font-size: 0.9rem;
+}
+.wiki-content h4 {
+  font-size: 0.8rem;
+}
+.wiki-content h5 {
+  font-size: 0.75rem;
+}
+.wiki-content h6 {
+  font-size: 0.7rem;
+}
+
+.wiki-index-link {
+  margin: 0 0 0.5em;
+}

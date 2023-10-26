@@ -1,0 +1,21 @@
+#full-page-search {
+  width: 100%;
+  position: relative;
+  margin-top: 1em;
+}
+
+#full-page-search .pagefind-ui__search-input {
+  border: 1px solid var(--border-color);
+}
+
+#full-page-search .pagefind-ui__drawer {
+  position: relative;
+  top: auto;
+  left: auto;
+  height: auto;
+  box-shadow: none;
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin-top: 2em;
+  z-index: auto;
+}

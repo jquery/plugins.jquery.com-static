@@ -1,0 +1,31 @@
+{%- css %}{% include "public/css/milestone-summary.css" %}{% endcss %}
+
+<div class="milestone-summary">
+  {% if milestone.completed != 0 %}
+    <p class="date">Completed {{ milestone.completed | readableDate }}</p>
+  {% elif milestone.due != 0 %}
+    <p class="date">Due {{ milestone.due | readableDate }}</p>
+  {% else %}
+    <p class="date">No date set</p>
+  {% endif %}
+
+  <div class="flex-row progress">
+    <div class="progress-bar">
+      <div class="progress-bar-fill" style="width: {{ milestone.percent }}%"></div>
+    </div>
+    {{ milestone.percent }}%
+  </div>
+
+  <div class="flex-row ticket-numbers">
+    <div class="ticket-number">Total number of tickets: {{ milestone.total }}</div>
+    <div class="ticket-number">- closed: {{ milestone.closed }}</div>
+    {% set active = milestone.total - milestone.closed %}
+    <div class="ticket-number">- active: {{ active }}</div>
+  </div>
+
+  {% if milestone.description %}
+    <div class="milestone-description">
+      {{ milestone.description | tracToHTML | safe }}
+    </div>
+  {% endif %}
+</div>

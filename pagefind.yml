@@ -1,0 +1,2 @@
+site: _site
+glob: '{milestone,ticket}/**/*.{html}'
