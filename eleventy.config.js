@@ -11,7 +11,6 @@ const path = require('node:path')
 const { exec } = require('node:child_process')
 
 const pluginImages = require('./eleventy.config.images.js')
-const tracToHTML = require('./eleventy.config.tracToHTML.js')
 
 module.exports = function (eleventyConfig) {
   // Copy the contents of the `public` folder to the output folder
@@ -20,33 +19,6 @@ module.exports = function (eleventyConfig) {
     './public/': '/',
     './node_modules/prismjs/themes/prism.min.css': '/css/prism.min.css'
   })
-
-  const attachTicket =
-    process.env.ATTACHMENT_TICKET || (process.env.ATTACHMENT_TICKET = '25')
-
-  // Limit the number of copies during development builds
-  if (process.env.NODE_ENV === 'development') {
-    console.log(
-      '[Development] Added attachments for http://localhost:8080/ticket/' +
-        attachTicket
-    )
-    eleventyConfig.addPassthroughCopy({
-      [`./raw-attachment/ticket/${attachTicket}`]: `/raw-attachment/ticket/${attachTicket}`,
-      [`./zip-attachment/ticket/${attachTicket}`]: `/zip-attachment/ticket/${attachTicket}`
-    })
-  } else {
-    eleventyConfig.addPassthroughCopy(
-      {
-        './raw-attachment/': '/raw-attachment/',
-        './zip-attachment/': '/zip-attachment/'
-      },
-      {
-        // Lower default concurrency to avoid EMFILE errors
-        // See https://github.com/11ty/eleventy/issues/2604
-        concurrency: 100
-      }
-    )
-  }
 
   // Run Eleventy when these files change:
   // https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
@@ -148,35 +120,26 @@ module.exports = function (eleventyConfig) {
     )
   })
 
-  eleventyConfig.addFilter('tracToHTML', tracToHTML)
-
   // Shortcodes
   eleventyConfig.addShortcode('currentYear', () => {
     return DateTime.local().toFormat('yyyy')
   })
 
-  eleventyConfig.addAsyncShortcode('attachment', async (ticketId, filename) => {
-    const content = await fs.promises.readFile(
-      path.join(__dirname, `raw-attachment/ticket/${ticketId}`, filename)
-    )
-    return content.toString()
-  })
-
-  eleventyConfig.on('eleventy.after', async ({ runMode, outputMode }) => {
-    if (
-      process.env.NODE_ENV === 'development' &&
-      runMode === 'serve' &&
-      outputMode === 'fs'
-    ) {
-      return exec('npm run searchindex', (err, stdout) => {
-        if (err) {
-          console.error(err)
-          return
-        }
-        console.log(stdout)
-      })
-    }
-  })
+  // eleventyConfig.on('eleventy.after', async ({ runMode, outputMode }) => {
+  //   if (
+  //     process.env.NODE_ENV === 'development' &&
+  //     runMode === 'serve' &&
+  //     outputMode === 'fs'
+  //   ) {
+  //     return exec('npm run searchindex', (err, stdout) => {
+  //       if (err) {
+  //         console.error(err)
+  //         return
+  //       }
+  //       console.log(stdout)
+  //     })
+  //   }
+  // })
 
   // Features to make your build faster (when you need them)
 
