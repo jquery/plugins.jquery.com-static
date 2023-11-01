@@ -1,30 +1,37 @@
-const { DateTime } = require('luxon')
+import { DateTime } from 'luxon'
 
-const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
-const pluginBundle = require('@11ty/eleventy-plugin-bundle')
-const pluginNavigation = require('@11ty/eleventy-navigation')
-const { EleventyHtmlBasePlugin } = require('@11ty/eleventy')
-const pluginFavicon = require('eleventy-favicon')
-const CleanCSS = require('clean-css')
-const fs = require('node:fs')
-const path = require('node:path')
-const { exec } = require('node:child_process')
+import pluginSyntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
+import pluginNavigation from '@11ty/eleventy-navigation'
+import { EleventyHtmlBasePlugin } from '@11ty/eleventy'
+import pluginFavicon from 'eleventy-favicon'
+import path from 'node:path'
+import { exec } from 'node:child_process'
 
-const pluginImages = require('./eleventy.config.images.js')
+import pluginImages from './eleventy.config.images.js'
 
-module.exports = function (eleventyConfig) {
+const now = String(Date.now())
+
+export default function eleventyConfig(eleventyConfig) {
   // Copy the contents of the `public` folder to the output folder
-  // For example, `./public/css/` ends up in `_site/css/`
+  // For example, `./public/img/` ends up in `_site/img/`
   eleventyConfig.addPassthroughCopy({
     './public/': '/',
-    './node_modules/prismjs/themes/prism.min.css': '/css/prism.min.css'
+    './styles/search.css': '/search.css'
   })
+
+  // Can't ignore public/style.css, which is ignore by gitignore
+  eleventyConfig.setUseGitIgnore(false)
+
+  eleventyConfig.addShortcode('version', () => now)
 
   // Run Eleventy when these files change:
   // https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
 
   // Watch content images for the image pipeline.
   eleventyConfig.addWatchTarget('content/**/*.{svg,webp,png,jpeg}')
+
+  // Watch non-tailwind CSS
+  eleventyConfig.addWatchTarget('styles/search.css')
 
   // App plugins
   eleventyConfig.addPlugin(pluginImages)
@@ -36,17 +43,6 @@ module.exports = function (eleventyConfig) {
   })
   eleventyConfig.addPlugin(pluginNavigation)
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin)
-  eleventyConfig.addPlugin(pluginBundle, {
-    transforms: [
-      function minifyCss(content) {
-        if (this.type === 'css') {
-          return new CleanCSS({}).minify(content).styles
-        }
-
-        return content
-      }
-    ]
-  })
 
   eleventyConfig.addFilter('debug', (value, stringify) => {
     if (stringify) {
@@ -125,21 +121,25 @@ module.exports = function (eleventyConfig) {
     return DateTime.local().toFormat('yyyy')
   })
 
-  // eleventyConfig.on('eleventy.after', async ({ runMode, outputMode }) => {
-  //   if (
-  //     process.env.NODE_ENV === 'development' &&
-  //     runMode === 'serve' &&
-  //     outputMode === 'fs'
-  //   ) {
-  //     return exec('npm run searchindex', (err, stdout) => {
-  //       if (err) {
-  //         console.error(err)
-  //         return
-  //       }
-  //       console.log(stdout)
-  //     })
-  //   }
-  // })
+  eleventyConfig.on(
+    'eleventy.after',
+    async ({ results, runMode, outputMode }) => {
+      if (
+        results.length > 0 &&
+        process.env.NODE_ENV === 'development' &&
+        runMode === 'serve' &&
+        outputMode === 'fs'
+      ) {
+        exec('npm run searchindex', (err, stdout) => {
+          if (err) {
+            console.error(err)
+            return
+          }
+          console.log(stdout)
+        })
+      }
+    }
+  )
 
   // Features to make your build faster (when you need them)
 

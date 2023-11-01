@@ -1,167 +1,26 @@
 <!doctype html>
-<html lang="{{ metadata.language }}">
+<html lang="{{ metadata.language }}" class="bg-background h-full">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-pagefind-meta="title">{{ title or metadata.title }}</title>
     <meta name="description" content="{{ description or metadata.description }}">
     {% favicon './public/favicon.svg' %}
-    {#
-      CSS bundles are provided via the `eleventy-plugin-bundle` plugin:
-      1. You can add to them using `{% css %}`
-      2. You can get from them using `{% getBundle "css" %}` or `{% getBundleFileUrl "css" %}`
-      3. You can do the same for JS: {% js %}{% endjs %} and <script>{% getBundle "js" %}</script>
-      4. Learn more: https://github.com/11ty/eleventy-plugin-bundle
-    #}
-    {#
-      Hot reload isn't working with the bundle plugin on windows
-      See https://github.com/11ty/eleventy/issues/2807
-    #}
-    {%- css %}{% include "public/css/index.css" %}{% endcss %}
-    {%- css %}{% include "public/css/search.css" %}{% endcss %}
-    {# These are in the njk so the path prefix is respected #}
-    {%- css %}
-    body {
-      background-image: url({{ '/img/bg-interior-tile-drk.jpg' | htmlBaseUrl }});
-    }
-    a.ext-link .icon {
-      background: url({{ '/img/extlink.png' | htmlBaseUrl }}) 0 50% no-repeat;
-    }
-    #search:after {
-      background: url({{ '/img/icon-search.png' | htmlBaseUrl }}) 0 0 no-repeat;
-    }
-    {% endcss %}
-    {# Add an arbitrary string to the bundle #}
-    {# {%- css %}* { box-sizing: border-box; }{% endcss %} #}
-    {# Render the CSS bundle using Inlined CSS (for the fastest site performance in production) #}
-    <style>
-      {% getBundle "css" %}
-    </style>
-    {#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
-    {# <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
+    <link rel="stylesheet" href="/style.css?v={% version %}"/>
+    <link rel="stylesheet" href="/search.css?v={% version %}"/>
   </head>
-  <body>
-    <div class="banner flex-center">
-      <span>jQuery issues have moved to <a href="https://github.com/jquery/jquery/issues">GitHub</a>. This site is now a static archive of the old <a href="https://trac.edgewall.org/">Trac</a> bugs site. Some functions and pages are no longer available.</span>
-    </div>
-    <div class="container">
-      <a href="#skip" class="visually-hidden">Skip to main content</a>
-      <header class="flex-column">
-        <div class="flex-row flex-between-start">
-          <a id="jq-siteLogo" href="/" title="jQuery Home">
-            <img src="/img/logo.svg" width="215" alt="jQuery: Write Less, Do More." />
-          </a>
-          <input class="hamburger-toggle visually-hidden" id="jq-menutoggle" type="checkbox" />
-          <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines flex-column flex-between-center">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-          </label>
-          <div id="jq-menus">
-            <nav id="jq-primaryNavigation">
-              <h2 class="visually-hidden">jQuery sites navigation menu</h2>
-              <ul class="nav">
-                <li class="jq-jquery active">
-                  <a href="https://jquery.com/" title="jQuery Home">jQuery</a>
-                </li>
-                <li class="jq-plugins">
-                  <a href="https://plugins.jquery.com/" title="jQuery Plugins">Plugins</a>
-                </li>
-                <li class="jq-ui">
-                  <a href="https://jqueryui.com/" title="jQuery UI">UI</a>
-                </li>
-                <li class="jq-meetup">
-                  <a href="https://meetups.jquery.com/" title="jQuery Meetups">Meetups</a>
-                </li>
-                <li class="jq-forum">
-                  <a href="https://forum.jquery.com/" title="jQuery Forum">Forum</a>
-                </li>
-                <li class="jq-blog">
-                  <a href="https://blog.jquery.com/" title="jQuery Blog">Blog</a>
-                </li>
-                <li class="jq-about">
-                  <a href="https://openjsf.org" title="About jQuery and OpenJS">About</a>
-                </li>
-                <li class="jq-donate">
-                  <a href="https://openjsf.org/about/project-funding-opportunities/" title="Donate to OpenJS">Donate</a>
-                </li>
-              </ul>
-            </nav>
-            <nav id="jq-secondaryNavigation">
-              <h2 class="visually-hidden">jQuery Core navigation menu</h2>
-              <ul class="nav">
-                <li class="jq-download">
-                  <a href="https://jquery.com/download/">
-                    Download
-                  </a>
-                </li>
-                <li class="jq-documentation">
-                  <a href="https://api.jquery.com/">
-                    Documentation
-                  </a>
-                </li>
-                <li class="jq-tutorials">
-                  <a href="https://learn.jquery.com/">
-                    Tutorials
-                  </a>
-                </li>
-                <li class="jq-bugTracker">
-                  <a href="https://github.com/jquery/jquery/issues">
-                    Bug Tracker
-                  </a>
-                </li>
-                <li class="jq-discussion">
-                  <a href="https://forum.jquery.com/">
-                    Discussion
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <div id="bug-tracker-form" class="flex-column flex-between-center">
-          <h1>Bug Tracker</h1>
-          <div id="search"></div>
-          {# <form class="flex-row flex-start-center" action="/search" method="get">
-            <label for="jq-primarySearch">Search Tickets</label>
-            <input type="text" value="" title="Search jQuery" name="q" id="jq-primarySearch">
-            <button type="submit" name="go" id="jq-searchButton">
-              <span class="visually-hidden">Search</span>
-            </button>
-          </form> #}
-        </div>
-      </header>
-      <main id="skip" class="flex-column">
-        <h2 class="visually-hidden">Side navigation</h2>
-        <nav id="jq-sidenav" class="flex-column white-box">
-          <h5 class="sidenav-header">Bug Tracker</h5>
-          <a href="/newticket">New Ticket</a>
-          <a href="/report">View Tickets</a>
-          <a href="/ticketgraph">Ticket Graph</a>
-          <a href="/roadmap">Roadmap</a>
-          <a href="/timeline">Recent Changes</a>
-        </nav>
-        <div id="jq-content" class="white-box">
-          {{ content | safe }}
-        </div>
+  <body class="flex flex-col h-full items-center">
+    <a href="#skip" class="sr-only">Skip to main content</a>
+    {% include "header.njk" %}
+    <div class="p-4 grow w-full max-w-screen-xl">
+      <a href="/" class="block mt-8 mb-6">
+        <img alt="jQuery Logo" src="/img/logo-white.svg" width="233" height="66"/>
+      </a>
+      {% include "search.njk" %}
+      <main id="skip" class="flex flex-col w-full mt-4 -mb-4 relative shadow-[-3px_0_5px_-3px_rgb(0,0,0,0.8),3px_0_5px_-3px_rgb(0,0,0,0.8)] bg-white rounded-xl lg:rounded-t-none overflow-hidden lg:mt-0">
+        {{ content | safe }}
       </main>
-      <footer>
-        Copyright &copy; {% currentYear %}
-        <a href="https://openjsf.org">The OpenJS Foundation</a>
-      </footer>
     </div>
-    <script src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
-    <script>
-      window.addEventListener('DOMContentLoaded', (event) => {
-        new PagefindUI({
-          element: "#search",
-          showImages: false,
-          translations: {
-            placeholder: '',
-            zero_results: 'No matches found.'
-          }
-        })
-      })
-    </script>
+    {% include "footer.njk" %}
   </body>
 </html>

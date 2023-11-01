@@ -1,2 +1,2 @@
 site: _site
-glob: '{milestone,ticket}/**/*.{html}'
+glob: '**/[!404]*.{html}'

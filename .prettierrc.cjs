@@ -3,5 +3,6 @@ module.exports = {
   singleQuote: true,
   arrowParens: 'always',
   trailingComma: 'none',
-  endOfLine: 'auto'
+  endOfLine: 'auto',
+  plugins: ['prettier-plugin-tailwindcss']
 }
