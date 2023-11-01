@@ -1,0 +1,38 @@
+<header class="flex w-full justify-center border-t border-t-gray-dark bg-gradient-to-b from-[#5c5a5a] from-[1px] via-[#4d4d4d] via-[1px] to-gray-dark border-b border-b-blue-light z-50">
+  <div class="flex flex-row justify-between items-center px-6 w-full max-w-screen-xl">
+    <ul class="flex flex-row items-end">
+      <li>
+        <a href="https://jquery.com/" title="jQuery" class="link-nav link-nav-mobile bg-gradient-to-b from-[#102d49] to-background !border-x-blue-light border-t border-t-blue-light mb-[-1px] h-[32px]">
+          {% include "icons/jquery.svg" %}
+        </a>
+      </li>
+      <li>
+        <a href="https://jqueryui.com/" title="jQuery UI" class="link-nav link-nav-mobile">
+          {% include "icons/jquery-ui.svg" %}
+        </a>
+      </li>
+      <li>
+        <a href="https://jquerymobile.com/" title="jQuery Mobile" class="link-nav link-nav-mobile">
+          {% include "icons/jquery-mobile.svg" %}
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/jquery/sizzle/wiki" title="Sizzle" class="link-nav link-nav-mobile">
+          {% include "icons/sizzle.svg" %}
+        </a>
+      </li>
+      <li>
+        <a href="https://qunitjs.com/" title="QUnit" class="link-nav link-nav-mobile">
+          {% include "icons/qunit.svg" %}
+        </a>
+      </li>
+    </ul>
+    <input id="jq-menutoggle" type="checkbox" class="peer/menu hamburger-toggle sr-only"/>
+    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </label>
+    {% include "menu.njk" %}
+  </div>
+</header>

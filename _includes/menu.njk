@@ -1,0 +1,92 @@
+<nav class="fixed top-[34px] inset-x-0 bottom-0 bg-gray-dark text-white py-4 lg:relative lg:inset-auto lg:bg-transparent lg:p-0 lg:opacity-100 lg:transform-none peer-checked/menu:opacity-100 peer-checked/menu:transform-none opacity-0 translate-x-full transition-[opacity,transform] overflow-y-auto lg:overflow-visible">
+  <ul class="lg:flex lg:flex-row lg:border-l lg:border-l-white/10 lg:border-r lg:border-r-gray-dark">
+    <li>
+      <a href="https://plugins.jquery.com/" class="link-nav">Plugins</a>
+    </li>
+    <li class="dropdown">
+      <a href="https://contribute.jquery.org/" class="link-nav">Contribute</a>
+      <ul class="pl-4 lg:p-0">
+        <li>
+          <a href="https://cla.openjsf.org/" class="link-nav">CLA</a>
+        </li>
+        <li>
+          <a href="https://contribute.jquery.org/style-guide/" class="link-nav">Style Guides</a>
+        </li>
+        <li>
+          <a href="https://contribute.jquery.org/triage/" class="link-nav">Bug Triage</a>
+        </li>
+        <li>
+          <a href="https://contribute.jquery.org/code/" class="link-nav">Code</a>
+        </li>
+        <li>
+          <a href="https://contribute.jquery.org/documentation/" class="link-nav">Documentation</a>
+        </li>
+        <li>
+          <a href="https://contribute.jquery.org/web-sites/" class="link-nav">Web Sites</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://js.foundation/events" class="link-nav">Events</a>
+    </li>
+    <li class="dropdown">
+      <a href="https://jquery.org/support/" class="link-nav">Support</a>
+      <ul>
+        <li>
+          <a href="https://learn.jquery.com/" class="link-nav">Learning Center</a>
+        </li>
+        <li>
+          <a href="https://irc.jquery.org/" class="link-nav">IRC/Chat</a>
+        </li>
+        <li>
+          <a href="https://forum.jquery.com/" class="link-nav">Forums</a>
+        </li>
+        <li>
+          <a href="https://stackoverflow.com/tags/jquery/info" class="link-nav">Stack Overflow</a>
+        </li>
+        <li>
+          <a href="https://jquery.org/support/" class="link-nav">Commercial Support</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="https://js.foundation/" class="link-nav">JS Foundation</a>
+      <ul class="pl-4 lg:p-0">
+        <li>
+          <a href="https://js.foundation/about/join" class="link-nav">Join</a>
+        </li>
+        <li>
+          <a href="https://js.foundation/about/members" class="link-nav">Members</a>
+        </li>
+        <li>
+          <a href="https://js.foundation/about/leadership" class="link-nav">Leadership</a>
+        </li>
+        <li>
+          <a href="https://js.foundation/community/code-of-conduct" class="link-nav">Conduct</a>
+        </li>
+        <li>
+          <a href="https://js.foundation/about/donate" class="link-nav border-b-0">Donate</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<script>
+  (function () {
+    const checkbox = document.getElementById('jq-menutoggle')
+    checkbox.addEventListener('change', function () {
+      if (this.checked) {
+        document
+          .body
+          .classList
+          .add('overflow-hidden')
+        document.body.scrollTop = 0
+      } else {
+        document
+          .body
+          .classList
+          .remove('overflow-hidden')
+      }
+    })
+  })()
+</script>

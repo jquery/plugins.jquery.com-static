@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+  h1 {
+    @apply text-4xl lg:text-6xl;
+  }
+  h2 {
+    @apply text-2xl lg:text-4xl;
+  }
+  h3 {
+    @apply text-xl lg:text-2xl;
+  }
+  h4 {
+    @apply text-lg lg:text-xl;
+  }
+  h5 {
+    @apply text-base;
+  }
+  h6 {
+    @apply text-sm;
+  }
+  a[href]:not([class^='link']) {
+    @apply text-link hover:text-link-hover active:text-link-active visited:text-link-visited underline;
+  }
+  hr {
+    @apply bg-gray-lighter my-3 h-3 border-none;
+  }
+}
+
+@layer components {
+  /* Links */
+  .link-nav {
+    @apply border-b-border text-link-light flex h-[34px] items-center justify-start border-b px-3 text-[13px] drop-shadow-sm;
+    @apply whitespace-nowrap no-underline lg:border-x lg:border-b-0 lg:border-l-black/30 lg:border-r-white/10;
+    @apply hover:bg-gray-dark active:bg-gradient-to-b active:from-black/10 active:to-white/10;
+  }
+  .link-nav.link-nav-mobile {
+    @apply w-[40px] justify-center border-x border-b-0 border-l-black/30 border-r-white/10 px-0;
+  }
+  .link-footer {
+    @apply text-footer-text flex flex-row items-center gap-2 transition-[color];
+    @apply hover:text-footer-text-hover;
+  }
+  .link-footer svg {
+    @apply fill-footer-text transition-[fill];
+  }
+  .link-footer:hover svg {
+    @apply fill-footer-text-hover;
+  }
+
+  /* Buttons */
+  .btn,
+  .pagefind-ui__button {
+    @apply bg-button block cursor-pointer rounded-lg px-2 py-1 text-sm text-white;
+    @apply hover:bg-button-hover active:shadow-inner;
+  }
+
+  /* Dropdown */
+  .dropdown {
+    @apply hover:bg-gray-dark relative;
+  }
+  .dropdown ul {
+    @apply lg:bg-gray-dark pl-4 lg:absolute lg:left-0 lg:top-full lg:hidden lg:p-0;
+  }
+  .dropdown:hover ul {
+    @apply lg:block;
+  }
+  .dropdown ul .link-nav {
+    @apply hover:bg-gray-darker justify-start;
+  }
+}
+
+/* Hamburger Icon */
+.hamburger-line {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition:
+    opacity 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+}
+.hamburger-toggle:checked + .hamburger-lines span:first-of-type {
+  transform: rotateZ(45deg) translate(4px, 4.5px) scaleX(1.2);
+}
+.hamburger-toggle:checked + .hamburger-lines span:nth-of-type(2) {
+  transform: rotateZ(135deg) scaleX(1.2);
+}
+.hamburger-toggle:checked + .hamburger-lines span:last-of-type {
+  transform: translateY(-8px) scale(0);
+  opacity: 0;
+}
