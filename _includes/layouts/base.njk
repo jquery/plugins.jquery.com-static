@@ -7,13 +7,12 @@
     <meta name="description" content="{{ description or metadata.description }}">
     {% favicon './public/favicon.svg' %}
     <link rel="stylesheet" href="/style.css?v={% version %}"/>
-    <link rel="stylesheet" href="/search.css?v={% version %}"/>
   </head>
   <body class="flex flex-col h-full items-center">
     <a href="#skip" class="sr-only">Skip to main content</a>
     {% include "header.njk" %}
     <div class="p-4 grow w-full max-w-screen-xl">
-      <a href="/" class="block mt-8 mb-6">
+      <a href="/" class="inline-block mt-8 mb-6">
         <img alt="jQuery Logo" src="/img/logo-white.svg" width="233" height="66"/>
       </a>
       {% include "search.njk" %}

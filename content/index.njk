@@ -2,17 +2,65 @@
 layout: layouts/base.njk
 ---
 
-<div class="flex flex-col">
-  <div class="text-center bg-[url(/img/dark-grey-tile.png)] p-8 lg:py-12">
-    <h1 class="text-white">The jQuery Plugin Registry</h1>
+<div class="text-center bg-[url(/img/dark-grey-tile.png)] p-8 lg:py-12">
+  <h1 class="text-white">The jQuery Plugin Registry</h1>
+</div>
+
+<div class="flex flex-col lg:flex-row-reverse">
+  <div class="py-5 px-6 flex flex-col grow gap-2">
+    <h2>This site is a static archive of the old jQuery Plugin Registry.</h2>
+    <p>New plugin releases will not be processed.</p>
+    <hr/>
+    <p>The jQuery Plugin Registry is preserved for historical purposes. Search is still supported.</p>
+    <p class="italic">We do not recommend using any plugins from this registry. Please find jQuery plugins on <a href="https://www.npmjs.com/search?q=keywords:jquery-plugin">npm</a>.</p>
   </div>
 
-  <div class="py-5 px-6 text-center flex flex-col gap-2">
-    <h2>This site is a static archive of the old jQuery Plugin Registry.</h2>
-    <h3>New plugin releases will not be processed.</h3>
-    <hr/>
-    <p>The jQuery Plugin Registry is preserved for historical purposes, and search is still supported.</p>
-    <p>However, we do not recommend using any plugins from this registry. Please find jQuery plugins on <a href="https://www.npmjs.com/search?q=keywords:jquery-plugin">npm.</a>
-    </p>
+  <div class="flex flex-col px-6 py-5 lg:w-[300px]">
+    <h3 class="text-gray-light flex flex-row items-center gap-2 mb-3">
+      {% include "icons/tag.svg" %}
+      Tags
+    </h3>
+    <ul class="flex flex-col gap-1 mb-5 ml-5 list-disc pl-5">
+      <li>
+        <a href="/tag/ui">ui</a>
+        <span class="count">(542)</span>
+      </li>
+      <li>
+        <a href="/tag/jquery">jquery</a>
+        <span class="count">(482)</span>
+      </li>
+      <li>
+        <a href="/tag/form">form</a>
+        <span class="count">(285)</span>
+      </li>
+      <li>
+        <a href="/tag/animation">animation</a>
+        <span class="count">(273)</span>
+      </li>
+      <li>
+        <a href="/tag/input">input</a>
+        <span class="count">(252)</span>
+      </li>
+      <li>
+        <a href="/tag/image">image</a>
+        <span class="count">(210)</span>
+      </li>
+      <li>
+        <a href="/tag/responsive">responsive</a>
+        <span class="count">(184)</span>
+      </li>
+      <li>
+        <a href="/tag/slider">slider</a>
+        <span class="count">(172)</span>
+      </li>
+      <li>
+        <a href="/tag/ajax">ajax</a>
+        <span class="count">(154)</span>
+      </li>
+      <li>
+        <a href="/tag/scroll">scroll</a>
+        <span class="count">(140)</span>
+      </li>
+    </ul>
   </div>
 </div>

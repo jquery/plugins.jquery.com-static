@@ -15,8 +15,7 @@ export default function eleventyConfig(eleventyConfig) {
   // Copy the contents of the `public` folder to the output folder
   // For example, `./public/img/` ends up in `_site/img/`
   eleventyConfig.addPassthroughCopy({
-    './public/': '/',
-    './styles/search.css': '/search.css'
+    './public/': '/'
   })
 
   // Can't ignore public/style.css, which is ignore by gitignore
@@ -30,8 +29,7 @@ export default function eleventyConfig(eleventyConfig) {
   // Watch content images for the image pipeline.
   eleventyConfig.addWatchTarget('content/**/*.{svg,webp,png,jpeg}')
 
-  // Watch non-tailwind CSS
-  eleventyConfig.addWatchTarget('styles/search.css')
+  eleventyConfig.addWatchTarget('styles/**/*.{css,js}')
 
   // App plugins
   eleventyConfig.addPlugin(pluginImages)
