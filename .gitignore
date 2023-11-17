@@ -131,6 +131,3 @@ dist
 
 # eleventy
 _site
-
-# tailwind
-public/style.css

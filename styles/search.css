@@ -51,7 +51,7 @@
   inset: 0;
   text-align: center;
   font-size: 1.5rem /* 24px */;
-  line-height: calc(100% - 4px);
+  line-height: 26px;
   color: rgb(255 255 255 / 0.3);
 }
 .pagefind-ui__hidden,

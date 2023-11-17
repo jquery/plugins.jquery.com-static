@@ -1,8 +1,14 @@
+@import './search.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply text-gray;
+  }
+
   h1,
   h2,
   h3,
@@ -15,13 +21,13 @@
     @apply text-4xl lg:text-6xl;
   }
   h2 {
-    @apply text-2xl lg:text-4xl;
+    @apply text-2xl;
   }
   h3 {
-    @apply text-xl lg:text-2xl;
+    @apply text-xl;
   }
   h4 {
-    @apply text-lg lg:text-xl;
+    @apply text-lg;
   }
   h5 {
     @apply text-base;
@@ -34,6 +40,16 @@
   }
   hr {
     @apply bg-gray-lighter my-3 h-3 border-none;
+  }
+
+  h1 svg,
+  h2 svg,
+  h3 svg,
+  h4 svg,
+  h5 svg,
+  h6 svg,
+  a svg {
+    fill: currentColor;
   }
 }
 
