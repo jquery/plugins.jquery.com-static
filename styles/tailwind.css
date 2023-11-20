@@ -1,3 +1,4 @@
+@import './prism.css';
 @import './search.css';
 
 @tailwind base;
@@ -18,7 +19,7 @@
     @apply font-bold;
   }
   h1 {
-    @apply text-4xl lg:text-6xl;
+    @apply text-4xl;
   }
   h2 {
     @apply text-2xl;
@@ -114,4 +115,42 @@
 .hamburger-toggle:checked + .hamburger-lines span:last-of-type {
   transform: translateY(-8px) scale(0);
   opacity: 0;
+}
+
+/* Syntax highlighting */
+pre:not([class*='language-']) {
+  margin: 0.5em 0;
+  tab-size: 2;
+  hyphens: none;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+
+  width: 100%;
+  padding: 0.25em;
+  font-size: 0.6875rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  background: #fff;
+  color: #333;
+  border: 1px solid #000;
+  text-align: left;
+}
+code {
+  color: #600;
+  border: 1px solid #e6e6e6;
+  border-radius: 0.25em;
+  padding: 0 0.3em;
+  background: #fafafa;
+  word-break: break-all;
+}
+pre[class*='language-'] code {
+  color: unset;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background: none;
+  word-break: normal;
 }
