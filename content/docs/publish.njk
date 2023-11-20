@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="px-6 py-5 flex flex-col gap-2">
+  <h1>Publishing Your Plugin</h1>
+  <hr/>
+
+  <h2>New plugin releases will not be processed. This page is preserved for historical purposes.</h2>
+
+  <div class="flex flex-col gap-2 italic opacity-50">
+    <p>Publishing your plugin on the site is a three step process:</p>
+    <h2>Add a Service Hook</h2>
+    <p>First, you&#39;ll need to enable the jQuery Plugins service hook on GitHub. On the settings page for your repository, click the Webhooks &amp; Services link, thenclick the Configure services button. Scroll down to find the jQuery Pluginsservice and enable it (there&#39;s no config, just check the Active checkbox andclick the Update settings button).</p>
+    <h2>Add a Manifest to your Repository</h2>
+    <p>The jQuery Plugins Registry will look in the root level of your repository forany files named <code>*.jquery.json</code>. You will want to create <code>*yourplugin*.jquery.json</code> according to the <a href="/docs/package-manifest/">package manifestspecification</a>. Use an online JSON verifier such as <a href="http://jsonlint.com">JSONlint</a> to make sure the file is valid. You are now ready to publish your plugin!</p>
+
+    <h2>Publishing a Version</h2>
+    <p>After the service hook is setup and your manifest has been added,publishing your plugin is as simple as tagging the version in git and pushingthe tag to GitHub. The service hook will notify the plugins site that anew tag is available and the plugins site will take care of the rest!</p>
+    <div class="syntaxhighlighter bash nogutter">
+      <table>
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line n1">1</div>
+              <div class="line n2">2</div>
+            </td>
+            <td class="code">
+              <pre><div class="container"><div class="line"><code>$ git tag 0.1.0</code></div></div><div class="container"><div class="line"><code>$ git push origin --tags</code></div></div></pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The name of the tag <strong>must</strong> be a valid <a href="http://semver.org/">semver</a> value, butmay contain an optional <code>v</code> prefix. The tag name must also match theversion listed in the manifest file. So, if the version field in the manifestis &quot;0.1.1&quot; the tag should be either &quot;0.1.1&quot; or &quot;v0.1.1&quot;. If the manifest fileis valid, the version will be automatically added to the plugins site.</p>
+    <p>The registry <strong>does not support re-processing tags that it has already seen.</strong>Therefore, we strongly suggest that you <strong>do not overwrite old tags</strong>. Instead,update the version number tag in the manifest, commit, and create a new tag tofix any errors you&#39;ve encountered. </p>
+    <p>For example, you&#39;ve pushed version <code>v1.7.0</code> of your plugin, but there is an <a href="/error.log">error detected</a> in the manifest. If you fix the error, delete,re-create, and push another <code>v1.7.0</code> tag, the registry <strong>will not</strong> detect it.You will have to create and push <code>v1.7.1</code>.</p>
+    <h2>Troubleshooting</h2>
+    <p>If you have problems with your plugin not publishing you should check the <a href="/error.log">error log</a> for hints on what the problem might be.</p>
+    <p>If you still encounter trouble getting this process to work with your plugin, pleasejoin the IRC channel <a href="irc://freenode.net:6667/#jquery-content">#jquery-content</a> on <a href="http://freenode.net">freenode</a>.  If you can&#39;t seem to connect with someonein the IRC channel, please feel free to email us at <a href="mailto:plugins@jquery.com">plugins@jquery.com</a>.</p>
+    <h2>How long should the process take</h2>
+    <p>When everything works, this process is pretty close to instant. There arecaches in place, etc, but in general, if you haven&#39;t seen your plugin getupdated on the site within 5 minutes, there is a good chance something wentwrong.  Going into your Web Hooks settings and hitting the &quot;Test Hook&quot; button(once) may help if you recently pushed a new tag.</p>
+  </div>
+</div>

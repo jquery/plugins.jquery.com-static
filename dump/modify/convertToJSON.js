@@ -1,5 +1,8 @@
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import path from 'path'
+import url from 'url'
+
+const dirname = url.fileURLToPath(new URL('.', import.meta.url))
 
 const files = [
   {
@@ -52,7 +55,7 @@ const files = [
 
 files.forEach(async ({ filename, columns }) => {
   const data = await fs.promises.readFile(
-    path.join(__dirname, '../database/', `${filename}.csv`),
+    path.join(dirname, '../database/', `${filename}.csv`),
     'utf8'
   )
 
@@ -79,8 +82,10 @@ files.forEach(async ({ filename, columns }) => {
     return obj
   })
 
+  await fs.promises.mkdir(path.join(dirname, '../json'), { recursive: true })
+
   return fs.promises.writeFile(
-    path.join(__dirname, '../../_data', `${filename}.json`),
+    path.join(dirname, '../json', `${filename}.json`),
     JSON.stringify(json, null, 2)
   )
 })
