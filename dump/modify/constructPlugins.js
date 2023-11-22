@@ -18,7 +18,7 @@ async function constructPlugins() {
   // "0" key means no parent, i.e. top-level plugin post
   const postsByParent = groupBy(posts, 'post_parent')
 
-  const tags = {}
+  const tags = []
   const plugins = postsByParent['0'].map((post) => {
     const pluginMeta = postmeta.filter((meta) => meta.post_id === post.ID)
     const metadata = pluginMeta.reduce((acc, meta) => {
@@ -38,16 +38,7 @@ async function constructPlugins() {
       )
     }
 
-    if (metadata.manifest.keywords && metadata.manifest.keywords.length) {
-      metadata.manifest.keywords.forEach((keyword) => {
-        if (!tags[keyword]) {
-          tags[keyword] = []
-        }
-        tags[keyword].push(post.ID)
-      })
-    }
-
-    return {
+    const plugin = {
       ...metadata,
       id: post.ID,
       name: post.post_title,
@@ -55,7 +46,34 @@ async function constructPlugins() {
       url: `/${post.post_name}`,
       postVersions
     }
+
+    if (metadata.manifest.keywords && metadata.manifest.keywords.length) {
+      metadata.manifest.keywords.forEach((keyword) => {
+        const lkeyword = keyword.toLowerCase()
+        const tag = tags.find((tag) => tag.name === lkeyword)
+        if (tag) {
+          tag.plugins.push(plugin)
+          return
+        }
+        tags.push({
+          name: lkeyword,
+          plugins: [plugin]
+        })
+      })
+    }
+
+    return plugin
   })
+
+  tags.sort((a, b) => b.plugins.length - a.plugins.length)
+
+  console.log(`Found ${plugins.length} plugins`)
+  console.log(`Found ${tags.length} tags`)
+  console.log(
+    tags
+      .slice(0, 10)
+      .forEach((tag) => console.log(`${tag.name} (${tag.plugins.length})`))
+  )
 
   await Promise.all([
     fs.promises.writeFile(
@@ -63,7 +81,7 @@ async function constructPlugins() {
       JSON.stringify(plugins, null, 2)
     ),
     fs.promises.writeFile(
-      path.join(dirname, '../../_data/tags.json'),
+      path.join(dirname, '../../_data/pluginTags.json'),
       JSON.stringify(tags, null, 2)
     )
   ])
