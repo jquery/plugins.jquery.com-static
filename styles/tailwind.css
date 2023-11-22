@@ -37,7 +37,7 @@
     @apply text-sm;
   }
   a[href]:not([class^='link']) {
-    @apply text-link hover:text-link-hover active:text-link-active visited:text-link-visited underline;
+    @apply text-link hover:text-link-hover active:text-link-active visited:text-link-visited underline hover:no-underline;
   }
   hr {
     @apply bg-gray-lighter my-3 h-3 border-none;
@@ -73,6 +73,9 @@
   }
   .link-footer:hover svg {
     @apply fill-footer-text-hover;
+  }
+  .link-sidebar {
+    @apply text-[#4d4d4d] no-underline hover:underline;
   }
 
   /* Buttons */

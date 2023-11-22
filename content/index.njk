@@ -21,46 +21,12 @@ layout: layouts/base.njk
       Tags
     </h3>
     <ul class="flex flex-col gap-1 mb-5 ml-5 list-disc pl-5">
-      <li>
-        <a href="/tag/ui">ui</a>
-        <span class="count">(542)</span>
-      </li>
-      <li>
-        <a href="/tag/jquery">jquery</a>
-        <span class="count">(482)</span>
-      </li>
-      <li>
-        <a href="/tag/form">form</a>
-        <span class="count">(285)</span>
-      </li>
-      <li>
-        <a href="/tag/animation">animation</a>
-        <span class="count">(273)</span>
-      </li>
-      <li>
-        <a href="/tag/input">input</a>
-        <span class="count">(252)</span>
-      </li>
-      <li>
-        <a href="/tag/image">image</a>
-        <span class="count">(210)</span>
-      </li>
-      <li>
-        <a href="/tag/responsive">responsive</a>
-        <span class="count">(184)</span>
-      </li>
-      <li>
-        <a href="/tag/slider">slider</a>
-        <span class="count">(172)</span>
-      </li>
-      <li>
-        <a href="/tag/ajax">ajax</a>
-        <span class="count">(154)</span>
-      </li>
-      <li>
-        <a href="/tag/scroll">scroll</a>
-        <span class="count">(140)</span>
-      </li>
+      {% for tag in pluginTags | head(10) %}
+        <li>
+          <a href="/tag/{{ tag.name | slugify }}">{{ tag.name }}</a>
+          <span class="count">({{ tag.plugins.length }})</span>
+        </li>
+      {% endfor %}
     </ul>
   </div>
 </div>
