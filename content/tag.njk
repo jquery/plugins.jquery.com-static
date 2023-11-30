@@ -3,22 +3,39 @@
   pagination: {
     data: 'pluginTags',
     size: 1,
-    alias: 'tag',
+    alias: 'page',
     // Sliced in development or the server gets bogged down
     before: (paginationData) => {
-      if (process.env.NODE_ENV === 'development') {
-        return paginationData.slice(0, 10)
-      }
-      return paginationData
+      const data = process.env.NODE_ENV === 'development'
+        ? paginationData.slice(0, 10)
+        : paginationData
+      const pages = []
+      data.forEach((tag, i) => {
+        tag.pages.forEach((page, j) => {
+          pages.push({
+            tag: tag.name,
+            totalPages: tag.pages.length,
+            plugins: page,
+            number: j
+          })
+        })
+      })
+      return pages
     }
   },
   layout: 'layouts/base-sidebar.njk',
   eleventyComputed: {
-    title: '{{ tag.name }} | {{ metadata.title }}',
+    title: '{{ page.tag }} | {{ metadata.title }}'
   },
-  permalink: '/tag/{{ tag.name | slugify }}/index.html'
+  permalink: '/tag/{{ page.tag | slugify }}/{% if page.number !== 0 %}page/{{ page.number + 1 }}/{% endif %}index.html'
 }
 ---
 
-<h1>Tagged: {{ tag.name }}</h1>
+<h1>Tagged: {{ page.tag }}</h1>
 <hr/>
+
+{% for plugin in page.plugins %}
+  {% include 'plugin-card.njk' %}
+{% endfor %}
+
+{% include 'pagination.njk' %}

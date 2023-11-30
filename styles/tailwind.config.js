@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   mode: 'jit',
@@ -10,12 +11,12 @@ module.exports = {
         border: '#000000 0 -1px 0'
       },
       colors: {
-        background: '#2b69a8',
+        background: '#0769ad',
         blue: {
-          light: '#8dcdf0'
+          light: '#8ccffa'
         },
         border: {
-          DEFAULT: '#5b5959',
+          DEFAULT: 'rgb(0,0,0,0.2)',
           dark: '#333333'
         },
         button: {
@@ -27,7 +28,8 @@ module.exports = {
           dark: '#242424',
           darker: '#191919',
           light: '#666666',
-          lighter: '#e6e6e6'
+          lighter: '#999999',
+          lightest: '#eeeeee'
         },
         link: {
           DEFAULT: '#0769AD',
@@ -44,9 +46,20 @@ module.exports = {
       },
       fontFamily: {
         ...defaultTheme.fontFamily,
-        sans: ['Helvetica Neue', 'Helvetica', ...defaultTheme.fontFamily.sans]
+        sans: ['Helvetica Neue', 'Helvetica', ...defaultTheme.fontFamily.sans],
+        serif: ['Cairo', ...defaultTheme.fontFamily.serif]
       }
     }
   },
-  plugins: []
+  plugins: [
+    plugin(function ({ addBase }) {
+      addBase({
+        '@font-face': {
+          fontFamily: 'Cairo',
+          src: 'url("/fonts/Cairo/Cairo-Bold.ttf") format("truetype")',
+          fontWeight: 'bold'
+        }
+      })
+    })
+  ]
 }
