@@ -71,9 +71,9 @@ export default function eleventyConfig(eleventyConfig) {
 
   eleventyConfig.addFilter('readableDate', (datetime, format, zone) => {
     // Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
-    const date = new Date(datetime / 1000)
+    const date = new Date(datetime)
     return DateTime.fromJSDate(date, { zone: zone || 'utc' }).toFormat(
-      format || 'LLLL dd, yyyy hh:mma z'
+      format || 'LLLL dd, yyyy'
     )
   })
 

@@ -23,8 +23,8 @@ layout: layouts/base.njk
     <ul class="flex flex-col gap-1 mb-5 ml-5 list-disc pl-5">
       {% for tag in pluginTags | head(10) %}
         <li>
-          <a href="/tag/{{ tag.name | slugify }}">{{ tag.name }}</a>
-          <span class="count">({{ tag.plugins.length }})</span>
+          <a class="underline hover:no-underline" href="/tag/{{ tag.name | slugify }}">{{ tag.name }}</a>
+          <span class="count">({{ tag.count }})</span>
         </li>
       {% endfor %}
     </ul>

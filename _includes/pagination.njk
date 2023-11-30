@@ -1,0 +1,31 @@
+{% if pagination.href.previous or pagination.href.next %}
+  <nav aria-label="Paging Navigation" class="flex flex-row justify-center items-center w-full gap-4 mt-4">
+    {% if pagination.href.previous %}
+      <a href="{{ pagination.href.previous }}">« Previous</a>
+    {% endif %}
+    {% if page.number > 3 %}
+      <a href="{{ pagination.hrefs[0] }}" class="underline hover:no-underline">1</a>
+    {% endif %}
+    {% if page.number > 4 %}
+      <span>...</span>
+    {% endif %}
+    {% for i in range(page.totalPages) %}
+      {% if i == page.number %}
+        <span>{{ i + 1 }}</span>
+      {% elif i > page.number - 3 and i < page.number + 3 %}
+        <a href="/tag/{{ page.tag | slugify }}/{% if i !== 0 %}page/{{ i + 1 }}/{% endif %}" class="underline hover:no-underline">
+          {{ i + 1 }}
+        </a>
+      {% endif %}
+    {% endfor %}
+    {% if page.number < page.totalPages - 3 %}
+      <span>...</span>
+    {% endif %}
+    {% if page.number < page.totalPages - 2 %}
+      <a href="/tag/{{ page.tag | slugify }}/page/{{ page.totalPages }}/" class="underline hover:no-underline">{{ page.totalPages }}</a>
+    {% endif %}
+    {% if pagination.href.next %}
+      <a href="{{ pagination.href.next }}">Next »</a>
+    {% endif %}
+  </nav>
+{% endif %}

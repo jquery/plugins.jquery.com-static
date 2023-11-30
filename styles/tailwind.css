@@ -16,7 +16,7 @@
   h4,
   h5,
   h6 {
-    @apply font-bold;
+    @apply font-serif font-bold;
   }
   h1 {
     @apply text-4xl;
@@ -37,10 +37,10 @@
     @apply text-sm;
   }
   a[href]:not([class^='link']) {
-    @apply text-link hover:text-link-hover active:text-link-active visited:text-link-visited underline hover:no-underline;
+    @apply text-link hover:text-link-hover active:text-link-active visited:text-link-visited;
   }
   hr {
-    @apply bg-gray-lighter my-3 h-3 border-none;
+    @apply bg-gray-lightest my-3 h-3 border-none;
   }
 
   h1 svg,
@@ -156,4 +156,8 @@ pre[class*='language-'] code {
   padding: 0;
   background: none;
   word-break: normal;
+}
+
+main p {
+  margin-bottom: 0.5rem;
 }
