@@ -1,0 +1,236 @@
+---js
+{
+  pagination: {
+    data: 'plugins',
+    size: 1,
+    alias: 'plugin',
+    // Sliced in development or the server gets bogged down
+    before: (paginationData) => {
+      const data = process.env.NODE_ENV === 'development'
+        ? paginationData.slice(0, 5)
+        : paginationData
+      return data.flatMap((plugin) => {
+        return plugin.posts.map((post) => {
+          return {
+            ...plugin,
+            current: post.version,
+            date: post.date,
+            postName: post.name
+          }
+        }).concat({
+          // This creates an extra page at /plugin-name/latest
+          ...plugin,
+          current: plugin.latest,
+          latest: undefined,
+          postName: plugin.latest
+        })
+      })
+    }
+  },
+  layout: 'layouts/base.njk',
+  eleventyComputed: {
+    title: '{{ plugin.name }} | {{ metadata.title }}'
+  },
+  permalink: '/{{ plugin.url }}{% if plugin.postName != plugin.latest %}/{{ plugin.postName }}{% endif %}/index.html'
+}
+---
+
+<div class="flex flex-col gap-5 py-5 px-6 lg:flex-row">
+  <div class="flex flex-col gap-2 grow">
+    <h1 class="lg:text-4xl">{{ plugin.name }}</h1>
+
+    <div>
+      {% if plugin.manifest.author.url %}
+      by <a class="inline" href="{{ plugin.manifest.author.url }}">{{ plugin.manifest.author.name }}</a>
+      {% else %}
+      by {{ plugin.manifest.author.name }}
+      {% endif %}
+    </div>
+
+    <p class="mt-2 mb-0">
+      {{ plugin.description }}
+    </p>
+
+    <hr/>
+
+    <div class="flex flex-col gap-2">
+      <h2>Tags</h2>
+      <div class="flex flex-wrap gap-2">
+        {% for keyword in plugin.manifest.keywords %}
+          <a class="btn btn-tag" href="/tag/{{ keyword | slugify }}">
+            {% include "icons/tag-small.svg" %}
+            {{ keyword }}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="flex flex-col gap-2">
+      <h2>Versions</h2>
+      <div class="flex flex-col rounded-lg overflow-hidden border border-border">
+        <div class="grid grid-cols-2 lg:grid-cols-3 bg-dark-tiles text-white text-xs uppercase py-1 px-2 font-bold">
+          <div>Version</div>
+          <div class="hidden lg:block"></div>
+          <div>Date</div>
+        </div>
+        {% for post in plugin.posts %}
+          <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
+            <div>
+              {% if post.version == plugin.current %}
+                <div class="font-bold font-serif">{{ post.version }}</div>
+              {% else %}
+                <a class="font-bold font-serif" href="{{ plugin.url }}{% if post.name != plugin.latest %}/{{ post.version }}{% endif %}">
+                  {{ post.version }}
+                </a>
+              {% endif %}
+            </div>
+            <div class="hidden lg:block"></div>
+            <div>{{ post.date | readableDate('LLL dd, yyyy') }}</div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-col w-full bg-sidebar-gradient gap-4 pl-5 border-l border-l-white-dark max-w-[330px]">
+
+    <div class="w-full rounded-lg border border-black bg-black shadow-[0_0_5px_rgba(0,0,0,0.5)]">
+      <div class="flex flex-col w-full border border-gray-light rounded-lg bg-[#202020] text-white font-bold font-serif">
+
+        <div class="flex flex-col py-2 px-4">
+          <div class="flex flex-row justify-between items-center">
+            <div class="text-2xl tracking-tighter">{{ plugin.current }}</div>
+            <div class="text-sm tracking-tighter">{{ plugin.date | readableDate }}</div>
+          </div>
+          <div class="flex flex-row justify-between items-center">
+            <div class="text-sm text-gray-lighter">Version</div>
+            <div class="text-sm text-gray-lighter">Released</div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-4 bg-dark-tiles py-3 px-4">
+          <a class="btn w-full text-white text-xl flex flex-row items-center gap-1 p-1 border border-[#e1b68c] bg-[#d18f4f] hover:bg-[#cc8540] rounded" href="{{ plugin.download_url }}">
+            {% include "icons/download.svg" %}
+            Download now
+          </a>
+          <div class="flex flex-col gap-2 p-2">
+            <a class="link-white" href="{{ plugin.repo_url }}">
+              {% include "icons/github.svg" %}
+              Fork on GitHub
+            </a>
+            {% if plugin.manifest.homepage %}
+              <a class="link-white" href="{{ plugin.manifest.homepage }}">
+                {% include "icons/external.svg" %}
+                View Homepage
+              </a>
+            {% endif %}
+            {% if plugin.manifest.docs %}
+              <a class="link-white" href="{{ plugin.manifest.docs }}">
+                {% include "icons/docs.svg" %}
+                Read the Docs
+              </a>
+            {% endif %}
+            {% if plugin.manifest.bugs %}
+              <a class="link-white" href="{{ plugin.manifest.bugs }}">
+                {% include "icons/flag.svg" %}
+                Bug Reports
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-3">
+      <h3 class="flex flex-row items-center gap-2 bg-sidebar-header-gradient py-3 px-5 -mx-5">
+        {% include "icons/github.svg" %}
+        GitHub Activity
+      </h3>
+      <div class="flex flex-row gap-3 font-extrabold font-serif text-center">
+        <div class="flex flex-col">
+          <div class="py-[2px] px-2 rounded-t bg-black leading-tight text-white text-4xl">{{ watchers[plugin.id].watchers }}</div>
+          <div class="py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
+        </div>
+        <div class="flex flex-col">
+          <div class="py-[2px] px-2 rounded-t bg-black leading-tight text-white text-4xl">{{ watchers[plugin.id].forks }}</div>
+          <div class="py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Forks</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-3">
+      <h3 class="flex flex-row items-center gap-2 bg-sidebar-header-gradient py-3 px-5 -mx-5">
+        {% include "icons/person.svg" %}
+        Author
+      </h3>
+      <a class="flex flex-row items-center gap-3 text-lg link hover:underline" href="{{ plugin.manifest.author.url }}">
+        <img
+          alt="Plugin Author"
+          class="rounded-lg"
+          src="https://secure.gravatar.com/avatar/{{ plugin.manifest.author.email | hash }}?s=80&amp;d=mm&amp;r=g"
+          srcset="https://secure.gravatar.com/avatar/{{ plugin.manifest.author.email | hash }}?s=160&amp;d=mm&amp;r=g 2x"
+          height="80"
+          width="80"/>
+        {{ plugin.manifest.author.name }}
+      </a>
+    </div>
+
+    <div class="flex flex-col gap-3">
+      <h3 class="flex flex-row items-center gap-2 bg-sidebar-header-gradient py-3 px-5 -mx-5">
+        {% include "icons/wrench.svg" %}
+        Maintainers
+      </h3>
+      {% for maintainer in plugin.manifest.maintainers %}
+        <a class="flex flex-row items-center gap-3 text-lg link hover:underline" href="{{ maintainer.url }}">
+          <img
+            alt="Plugin Maintainer"
+            class="rounded-lg"
+            src="https://secure.gravatar.com/avatar/{{ maintainer.email | hash }}?s=48&amp;d=mm&amp;r=g"
+            srcset="https://secure.gravatar.com/avatar/{{ maintainer.email | hash }}?s=96&amp;d=mm&amp;r=g 2x"
+            height="48"
+            width="48"/>
+          {{ maintainer.name }}
+        </a>
+      {% endfor %}
+    </div>
+
+    <div class="flex flex-col gap-3">
+      <h3 class="flex flex-row items-center gap-2 bg-sidebar-header-gradient py-3 px-5 -mx-5">
+        {% include "icons/book.svg" %}
+        Licenses
+      </h3>
+      <ul class="pl-5">
+        {% for license in plugin.manifest.licenses %}
+          <li class="py-1 px-2 list-image-[url(/img/bullet.png)]">
+            <a class="text-list link hover:underline align-middle" href="{{ license.url }}">
+              {{ license.type }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="flex flex-col gap-3">
+      <h3 class="flex flex-row items-center gap-2 bg-sidebar-header-gradient py-3 px-5 -mx-5">
+        {% include "icons/dependency.svg" %}
+        Dependencies
+      </h3>
+      <ul class="pl-5">
+        {% if plugin.manifest.dependencies | length %}
+          {% for dependency, version in plugin.manifest.dependencies %}
+            <li class="py-1 px-2 list-image-[url(/img/bullet.png)]">
+              {{ dependency }}
+              {{ version }}
+            </li>
+          {% endfor %}
+        {% else %}
+          <li class="py-1 px-2 list-image-[url(/img/bullet.png)]">
+            None
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>

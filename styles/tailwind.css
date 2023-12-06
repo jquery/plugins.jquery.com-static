@@ -19,7 +19,7 @@
     @apply font-serif font-bold;
   }
   h1 {
-    @apply text-4xl;
+    @apply text-2xl lg:text-4xl;
   }
   h2 {
     @apply text-2xl;
@@ -36,8 +36,9 @@
   h6 {
     @apply text-sm;
   }
-  a[href]:not([class^='link']) {
+  a[href]:not([class*='link']):not([class*='btn']) {
     @apply text-link hover:text-link-hover active:text-link-active visited:text-link-visited;
+    @apply underline hover:no-underline active:no-underline;
   }
   hr {
     @apply bg-gray-lightest my-3 h-3 border-none;
@@ -50,12 +51,18 @@
   h5 svg,
   h6 svg,
   a svg {
-    fill: currentColor;
+    @apply inline-block fill-current;
   }
 }
 
 @layer components {
   /* Links */
+  .link-white {
+    @apply flex flex-row items-center gap-2 font-serif text-lg text-white hover:underline;
+  }
+  .link-white svg {
+    @apply fill-blue-light h-[24px] w-[24px];
+  }
   .link-nav {
     @apply border-b-border text-link-light flex h-[34px] items-center justify-start border-b px-3 text-[13px] drop-shadow-sm;
     @apply whitespace-nowrap no-underline lg:border-x lg:border-b-0 lg:border-l-black/30 lg:border-r-white/10;
@@ -81,8 +88,15 @@
   /* Buttons */
   .btn,
   .pagefind-ui__button {
-    @apply bg-button block cursor-pointer rounded-lg px-2 py-1 text-sm text-white;
-    @apply hover:bg-button-hover active:shadow-inner;
+    @apply cursor-pointer text-sm text-white;
+    @apply active:shadow-[inset_0_0_0.5rem_1px_rgba(0,0,0,0.7)];
+  }
+  .pagefind-ui__button {
+    @apply bg-button hover:bg-button-hover block rounded-lg px-2 py-1;
+  }
+  .btn-tag {
+    @apply flex flex-row items-center gap-1 rounded px-2 py-[2px];
+    @apply bg-blue hover:bg-blue-hover;
   }
 
   /* Dropdown */

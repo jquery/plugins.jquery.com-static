@@ -1,8 +1,21 @@
 /**
  * Run buildWatchers.js to generate watchers.json
  */
-import { groupBy } from 'lodash-es'
+import { groupBy, uniqBy } from 'lodash-es'
 import { readJSON, writeJSON } from './fsJSON.js'
+
+const rplus = /\+/g
+const rduplicate = /-\d+$/
+
+// Wordpress removed the plus signs from any version numbers.
+// Match by comparing without plus signs to get them back.
+function matchVersion(versions, postName) {
+  return (
+    versions.find(
+      (v) => v.replace(rplus, '') === postName.replace(rduplicate, '')
+    ) || postName
+  )
+}
 
 async function constructPlugins() {
   const posts = await readJSON('../json/posts.json')
@@ -34,14 +47,21 @@ async function constructPlugins() {
             : value.replace('http:', 'https:')
         return acc
       }, {})
+      const versions = metadata.versions
       const otherPosts = postsByParent[post.ID] || []
-      const posts = [post].concat(otherPosts).map((otherPost) => ({
-        date: otherPost.post_date,
-        version: otherPost.post_name
-      }))
-      posts.sort((a, b) => {
-        const aDate = new Date(a)
-        const bDate = new Date(b)
+      const posts = uniqBy(
+        [post]
+          .concat(otherPosts)
+          .map((p) => ({
+            date: p.post_date,
+            name: p.post_name,
+            version: matchVersion(versions, p.post_name)
+          }))
+          .filter((p) => p.version !== metadata.manifest.name),
+        'name'
+      ).sort((a, b) => {
+        const aDate = new Date(a.date)
+        const bDate = new Date(b.date)
         return aDate > bDate ? -1 : aDate < bDate ? 1 : 0
       })
 
@@ -58,7 +78,7 @@ async function constructPlugins() {
         name: post.post_title,
         description: post.post_content,
         url: `/${post.post_name}`,
-        date: posts[posts.length - 1].date,
+        date: posts.length ? posts[posts.length - 1].date : post.post_date,
         posts
       }
 

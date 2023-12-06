@@ -6,6 +6,7 @@ import { EleventyHtmlBasePlugin } from '@11ty/eleventy'
 import pluginFavicon from 'eleventy-favicon'
 import path from 'node:path'
 import { exec } from 'node:child_process'
+import { createHash } from 'node:crypto'
 
 import pluginImages from './eleventy.config.images.js'
 
@@ -73,7 +74,7 @@ export default function eleventyConfig(eleventyConfig) {
     // Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
     const date = new Date(datetime)
     return DateTime.fromJSDate(date, { zone: zone || 'utc' }).toFormat(
-      format || 'LLLL dd, yyyy'
+      format || 'LLLL d, yyyy'
     )
   })
 
@@ -112,6 +113,11 @@ export default function eleventyConfig(eleventyConfig) {
     return (tags || []).filter(
       (tag) => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1
     )
+  })
+
+  eleventyConfig.addFilter('hash', function (str) {
+    if (!str) return ''
+    return createHash('sha256').update(str.trim().toLowerCase()).digest('hex')
   })
 
   // Shortcodes
