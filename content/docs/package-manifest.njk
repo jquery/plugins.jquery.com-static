@@ -64,7 +64,7 @@ The files must be actual JSON, not just a JavaScript object literal.</p>
     </li>
   </ul>
   <h3>
-    <a href="#name" id="name" class="icon-link toc-link"></a> name</h3>
+    <a href="#name" id="name"></a> name</h3>
   <p>The <em>most</em> important things in your manifest file are the name and version fields.
 The name and version together form an identifier that is assumed
 to be completely unique. Changes to the plugin should come along with
@@ -83,7 +83,7 @@ Site, either consider renaming your plugin or namespacing it. For example, jQuer
 plugins are listed with the "ui." prefix (e.g. ui.dialog, ui.autocomplete).</li>
   </ul>
   <h3>
-    <a href="#version" id="version" class="icon-link toc-link"></a> version</h3>
+    <a href="#version" id="version"></a> version</h3>
   <p>The <em>most</em> important things in your manifest file are the name and version fields.
 The name and version together form an identifier that is assumed
 to be completely unique. Changes to the plugin should come along with
@@ -91,16 +91,16 @@ changes to the version. Version number must be a valid semantic version number
 per <a href="https://github.com/isaacs/node-semver">node-semver</a>.</p>
   <p>See <a href="#specifying-versions">Specifying Versions</a>.</p>
   <h3>
-    <a href="#title" id="title" class="icon-link toc-link"></a> title</h3>
+    <a href="#title" id="title"></a> title</h3>
   <p>A nice complete and pretty title of your plugin. This will be used for the page
 title and top-level heading on your plugin's page. Include jQuery (if you want) and
 spaces and mixed case, unlike <a href="#name">name</a>.</p>
   <h3>
-    <a href="#author" id="author" class="icon-link toc-link"></a> author</h3>
+    <a href="#author" id="author"></a> author</h3>
   <p>One person.</p>
   <p>See <a href="#people-fields">People Fields</a>.</p>
   <h3>
-    <a href="#licenses" id="licenses" class="icon-link toc-link"></a> licenses</h3>
+    <a href="#licenses" id="licenses"></a> licenses</h3>
   <p>Array of licenses under which the plugin is provided. Each license is a hash with
 a url property linking to the actual text and an optional "type" property specifying the type of license. If the license is one of the <a href="http://www.opensource.org/licenses/alphabetical">official open source licenses</a>, the official license name or its abbreviation may be explicated with the "type" property.</p>
 
@@ -114,7 +114,7 @@ a url property linking to the actual text and an optional "type" property specif
 {% endhighlight %}
 
   <h3>
-    <a href="#dependencies" id="dependencies" class="icon-link toc-link"></a> dependencies</h3>
+    <a href="#dependencies" id="dependencies"></a> dependencies</h3>
   <p>Dependencies are specified with a simple hash of package name to version
 range. The version range is EITHER a string which has one or more
 space-separated descriptors, OR a range like "fromVersion - toVersion".</p>
@@ -126,37 +126,37 @@ dependencies as well. This gives you the flexibility to specify compatible versi
 of each library you depend on.</p>
   <p>You must list at least one dependency, <code>jquery</code> (note that it's lower-case).</p>
   <h3>
-    <a href="#description" id="description" class="icon-link toc-link"></a> description</h3>
+    <a href="#description" id="description"></a> description</h3>
   <p>Put a description in it. It's a string. This helps people discover your
 plugin, as it's listed on the jQuery Plugins Site.</p>
   <h3>
-    <a href="#keywords" id="keywords" class="icon-link toc-link"></a> keywords</h3>
+    <a href="#keywords" id="keywords"></a> keywords</h3>
   <p>Put keywords in it. It's an array of strings. This helps people
 discover your plugin as it's listed on the jQuery Plugins Site.
 Keywords may only contain letters, numbers, hyphens, and dots.</p>
   <h3>
-    <a href="#homepage" id="homepage" class="icon-link toc-link"></a> homepage</h3>
+    <a href="#homepage" id="homepage"></a> homepage</h3>
   <p>The url to the plugin homepage.</p>
   <h3>
-    <a href="#docs" id="docs" class="icon-link toc-link"></a> docs</h3>
+    <a href="#docs" id="docs"></a> docs</h3>
   <p>The url to the plugin documentation.</p>
   <h3>
-    <a href="#demo" id="demo" class="icon-link toc-link"></a> demo</h3>
+    <a href="#demo" id="demo"></a> demo</h3>
   <p>The url to the plugin demo or demos.</p>
   <h3>
-    <a href="#download" id="download" class="icon-link toc-link"></a> download</h3>
+    <a href="#download" id="download"></a> download</h3>
   <p>The url to download the plugin. A download URL will be automatically generated
 based on the tag in GitHub, but you can specify a custom URL if you'd prefer
 to send users to your own site.</p>
   <h3>
-    <a href="#bugs" id="bugs" class="icon-link toc-link"></a> bugs</h3>
+    <a href="#bugs" id="bugs"></a> bugs</h3>
   <p>The url to the bug tracker for the plugin.</p>
   <h3>
-    <a href="#maintainers" id="maintainers" class="icon-link toc-link"></a> maintainers</h3>
+    <a href="#maintainers" id="maintainers"></a> maintainers</h3>
   <p>An array of people.</p>
   <p>See <a href="#people-fields">People Fields</a>.</p>
   <h2>
-    <a href="#people-fields" id="people-fields" class="icon-link toc-link"></a> People Fields</h2>
+    <a href="#people-fields" id="people-fields"></a> People Fields</h2>
   <p>A "person" is an object with a "name" field and optionally "url" and
 "email", like this:</p>
 
@@ -171,7 +171,7 @@ to send users to your own site.</p>
   <p>Both the email and url are optional.</p>
   <hr>
   <h2>
-    <a href="#specifying-versions" id="specifying-versions" class="icon-link toc-link"></a> Specifying Versions</h2>
+    <a href="#specifying-versions" id="specifying-versions"></a> Specifying Versions</h2>
   <p>Version range descriptors may be any of the following styles, where "version"
 is a semver compatible version identifier.</p>
   <ul class="flex flex-col gap-1 mb-5 ml-5 list-disc pl-5">
@@ -222,7 +222,7 @@ is a semver compatible version identifier.</p>
 {% endhighlight %}
 
   <h3>
-    <a href="#tilde-version-ranges" id="tilde-version-ranges" class="icon-link toc-link"></a> Tilde Version Ranges</h3>
+    <a href="#tilde-version-ranges" id="tilde-version-ranges"></a> Tilde Version Ranges</h3>
   <p>A range specifier starting with a tilde <code>~</code> character is matched against
 a version in the following fashion.</p>
   <ul class="flex flex-col gap-1 mb-5 ml-5 list-disc pl-5">
@@ -242,7 +242,7 @@ a version in the following fashion.</p>
     </li>
   </ul>
   <h3>
-    <a href="#x-version-ranges" id="x-version-ranges" class="icon-link toc-link"></a> X Version Ranges</h3>
+    <a href="#x-version-ranges" id="x-version-ranges"></a> X Version Ranges</h3>
   <p>An "x" in a version range specifies that the version number must start
 with the supplied digits, but any digit may be used in place of the x.</p>
   <p>The following are equivalent:</p>
@@ -266,7 +266,7 @@ with the supplied digits, but any digit may be used in place of the x.</p>
   <p>You may not supply a comparator with a version containing an x. Any
 digits after the first "x" are ignored.</p>
   <h3>
-    <a href="#sample-manifest" id="sample-manifest" class="icon-link toc-link"></a> Sample manifest</h3>
+    <a href="#sample-manifest" id="sample-manifest"></a> Sample manifest</h3>
   <p>
     <strong>color.jquery.json</strong>
   </p>
