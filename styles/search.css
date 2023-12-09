@@ -91,6 +91,15 @@
 .pagefind-ui__result p {
   margin: 0.5rem 0 1rem;
 }
+.pagefind-ui__result-link {
+  color: #5b5959;
+  text-decoration: none;
+  font-weight: bold;
+}
+.pagefind-ui__result-link:hover,
+.pagefind-ui__result-link:active {
+  text-decoration: underline;
+}
 .pagefind-ui__result-thumb {
   display: flex;
   flex-direction: column;
@@ -104,10 +113,16 @@
   font-weight: 700;
   text-transform: uppercase;
 }
-.pagefind-ui__button {
-  margin-top: 2rem;
+.pagefind-ui__button[type='button'] {
+  display: block;
+  background-color: #0f67a1;
+  margin-top: 1.5rem;
   width: 100%;
-  padding: 0.75rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+.pagefind-ui__button:hover {
+  background-color: #0e3a58;
 }
 
 @media (min-width: 1024px) {
