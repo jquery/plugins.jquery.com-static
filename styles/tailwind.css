@@ -91,9 +91,6 @@
     @apply cursor-pointer text-sm text-white;
     @apply active:shadow-[inset_0_0_0.5rem_1px_rgba(0,0,0,0.7)];
   }
-  .pagefind-ui__button {
-    @apply bg-button hover:bg-button-hover block rounded-lg px-2 py-1;
-  }
   .btn-tag {
     @apply flex flex-row items-center gap-1 rounded px-2 py-[2px];
     @apply bg-blue hover:bg-blue-hover;
