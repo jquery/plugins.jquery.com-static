@@ -49,7 +49,7 @@ jobs:
       - name: Build with Eleventy
         env:
           NODE_ENV: production
-          NODE_OPTIONS: '--max_old_space_size=4096'
+          NODE_OPTIONS: '--max-old-space-size=8192'
         run: npm run build -- --pathprefix="/plugins.jquery.com/"
 
       - name: Push to branch
