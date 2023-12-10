@@ -47,7 +47,7 @@
     "lodash-es": "^4.17.21",
     "luxon": "^3.4.4",
     "pagefind": "^1.0.4",
-    "prettier": "^3.1.0",
+    "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.9",
     "rimraf": "^5.0.5",
     "tailwindcss": "^3.3.6"
