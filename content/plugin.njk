@@ -31,7 +31,7 @@
   eleventyComputed: {
     title: '{{ plugin.name }} | {{ metadata.title }}'
   },
-  permalink: '/{{ plugin.url }}{% if plugin.postName != plugin.latest %}/{{ plugin.postName }}{% endif %}/index.html'
+  permalink: '/{{ plugin.url }}{% if plugin.version != plugin.latest %}/{{ plugin.postName }}{% endif %}/index.html'
 }
 ---
 
