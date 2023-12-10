@@ -1,5 +1,4 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
-const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   mode: 'jit',
@@ -8,7 +7,6 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'dark-tiles': 'url(/img/dark-grey-tile.png)',
         'sidebar-gradient':
           'radial-gradient(ellipse at left, #f2f2f2, #ffffff 80%)',
         'sidebar-header-gradient': 'linear-gradient(to right, #efefef, #f3f3f3)'
@@ -68,16 +66,5 @@ module.exports = {
         serif: ['Cairo', ...defaultTheme.fontFamily.serif]
       }
     }
-  },
-  plugins: [
-    plugin(function ({ addBase }) {
-      addBase({
-        '@font-face': {
-          fontFamily: 'Cairo',
-          src: 'url("/fonts/Cairo/Cairo-Bold.ttf") format("truetype")',
-          fontWeight: 'bold'
-        }
-      })
-    })
-  ]
+  }
 }

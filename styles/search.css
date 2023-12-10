@@ -4,7 +4,6 @@
 }
 .pagefind-ui__form:after {
   content: '';
-  background: url(/img/search.svg) no-repeat 2px center;
   position: absolute;
   right: 0.25rem;
   top: 50%;
