@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en" class="bg-background h-full">
   <head>
@@ -10,7 +11,21 @@
 <link rel="icon" type="image/svg+xml" href="/plugins.jquery.com/favicon.svg">
 <link rel="apple-touch-icon" href="/plugins.jquery.com/apple-touch-icon.png">
     
-    <link rel="stylesheet" href="/plugins.jquery.com/style.css?v=1702243570946">
+    <link rel="stylesheet" href="/plugins.jquery.com/style.css?v=1702248695099">
+    
+    <style type="text/css">
+      @font-face {
+        font-family: Cairo;
+        src: url("/fonts/Cairo/Cairo-Bold.ttf") format("truetype");
+        font-weight: bold;
+      }
+      .bg-dark-tiles {
+        background-image: url("/img/dark-grey-tile.png");
+      }
+      .pagefind-ui__form:after {
+        background: url("/img/search.svg") no-repeat 2px center;
+      }
+    </style>
   </head>
   <body class="flex flex-col h-full items-center">
     <a href="#skip" class="sr-only">Skip to main content</a>
@@ -80,7 +95,7 @@
     <nav class="fixed top-[34px] inset-x-0 bottom-0 bg-gray-dark text-white py-4 lg:relative lg:inset-auto lg:bg-transparent lg:p-0 lg:opacity-100 lg:transform-none peer-checked/menu:opacity-100 peer-checked/menu:transform-none opacity-0 translate-x-full transition-[opacity,transform] overflow-y-auto lg:overflow-visible">
   <ul class="lg:flex lg:flex-row lg:border-l lg:border-l-white/10 lg:border-r lg:border-r-gray-dark">
     <li>
-      <a href="https://plugins.jquery.com/" class="link-nav">Plugins</a>
+      <a href="/plugins.jquery.com/" class="link-nav">Plugins</a>
     </li>
     <li class="dropdown">
       <a href="https://contribute.jquery.org/" class="link-nav">Contribute</a>
@@ -434,7 +449,7 @@
         <div class="flex flex-col py-2 px-4">
           <div class="flex flex-row justify-between items-center">
             <div class="text-2xl tracking-tighter">3.0.2</div>
-            <div class="text-sm tracking-tighter">July 13, 2013</div>
+            <div class="text-sm tracking-tighter">June 29, 2014</div>
           </div>
           <div class="flex flex-row justify-between items-center">
             <div class="text-sm text-gray-lighter">Version</div>
