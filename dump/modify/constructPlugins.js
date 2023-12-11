@@ -1,7 +1,7 @@
 /**
  * Run buildWatchers.js to generate watchers.json
  */
-import { groupBy, uniqBy } from 'lodash-es'
+import { groupBy, uniq, uniqBy } from 'lodash-es'
 import { readJSON, writeJSON } from './fsJSON.js'
 
 const rplus = /\+/g
@@ -15,6 +15,19 @@ function matchVersion(versions, postName) {
       (v) => v.replace(rplus, '') === postName.replace(rduplicate, '')
     ) || postName
   )
+}
+
+function getMetadata(postmeta, postID) {
+  return postmeta
+    .filter((meta) => meta.post_id === postID)
+    .reduce((acc, meta) => {
+      const value = meta.meta_value
+      acc[meta.meta_key] =
+        value.startsWith('{') || value.startsWith('[')
+          ? JSON.parse(meta.meta_value.replace(/(?<!\\)\\"/g, '"'))
+          : value.replace('http:', 'https:')
+      return acc
+    }, {})
 }
 
 async function constructPlugins() {
@@ -46,21 +59,14 @@ async function constructPlugins() {
     // after sorting by watchers count
     (post) => post.post_name
   ).map((post) => {
-    const pluginMeta = postmeta.filter((meta) => meta.post_id === post.ID)
-    const metadata = pluginMeta.reduce((acc, meta) => {
-      const value = meta.meta_value
-      acc[meta.meta_key] =
-        value.startsWith('{') || value.startsWith('[')
-          ? JSON.parse(meta.meta_value.replace(/(?<!\\)\\"/g, '"'))
-          : value.replace('http:', 'https:')
-      return acc
-    }, {})
-    const versions = metadata.versions
+    const metadata = getMetadata(postmeta, post.ID)
+    const versions = uniq(metadata.versions)
     const otherPosts = postsByParent[post.ID] || []
     const posts = uniqBy(
       [post]
         .concat(otherPosts)
         .map((p) => ({
+          download_url: getMetadata(postmeta, p.ID).download_url,
           date: p.post_date,
           name: p.post_name,
           version: matchVersion(versions, p.post_name)
@@ -81,6 +87,7 @@ async function constructPlugins() {
 
     const plugin = {
       ...metadata,
+      versions,
       ...(watchers[post.ID + ''] || {}),
       id: post.ID,
       name: post.post_title,
