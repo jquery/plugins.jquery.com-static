@@ -203,7 +203,7 @@
       </h3>
       <ul class="pl-5">
         {% for license in plugin.manifest.licenses %}
-          <li class="py-1 px-2 list-image-[url(/img/bullet.png)]">
+          <li class="py-1 px-2 list-custom-bullet">
             <a class="text-list link hover:underline align-middle" href="{{ license.url }}">
               {{ license.type }}
             </a>
@@ -220,13 +220,13 @@
       <ul class="pl-5">
         {% if plugin.manifest.dependencies | length %}
           {% for dependency, version in plugin.manifest.dependencies %}
-            <li class="py-1 px-2 list-image-[url(/img/bullet.png)]">
+            <li class="py-1 px-2 list-custom-bullet">
               {{ dependency }}
               {{ version }}
             </li>
           {% endfor %}
         {% else %}
-          <li class="py-1 px-2 list-image-[url(/img/bullet.png)]">
+          <li class="py-1 px-2 list-custom-bullet">
             None
           </li>
         {% endif %}
