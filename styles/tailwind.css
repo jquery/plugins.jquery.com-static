@@ -43,6 +43,9 @@
   hr {
     @apply bg-gray-lightest my-3 h-3 border-none;
   }
+  svg {
+    @apply shrink-0;
+  }
 
   h1 svg,
   h2 svg,

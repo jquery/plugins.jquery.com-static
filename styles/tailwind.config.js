@@ -53,6 +53,9 @@ module.exports = {
           hover: '#e6e6e6'
         },
         transparent: 'transparent',
+        warning: {
+          DEFAULT: '#ffffaa'
+        },
         white: {
           DEFAULT: '#ffffff',
           dark: '#f2f2f2',

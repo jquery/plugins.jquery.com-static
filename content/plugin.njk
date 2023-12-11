@@ -36,7 +36,18 @@
 ---
 
 <div class="flex flex-col gap-5 py-5 px-6 lg:flex-row">
+
   <div class="flex flex-col gap-2 grow">
+    <div class="flex flex-row justify-center gap-1 mb-3 p-4 text-center bg-warning rounded">
+      <div class="pt-px">
+        {% include "icons/warning.svg" %}
+      </div>
+      <div class="text-lg">
+        This version is old school.
+        Please find jQuery plugins on <a href="https://www.npmjs.com/search?q=keywords:jquery-plugin">npm</a>.
+      </div>
+    </div>
+
     <h1 class="lg:text-4xl">{{ plugin.name }}</h1>
 
     <div>
