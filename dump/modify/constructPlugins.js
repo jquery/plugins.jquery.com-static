@@ -86,7 +86,7 @@ async function constructPlugins() {
       name: post.post_title,
       description: post.post_content,
       url: `/${post.post_name}`,
-      date: posts.length ? posts[posts.length - 1].date : post.post_date,
+      date: posts.length ? posts[0].date : post.post_date,
       posts
     }
 
