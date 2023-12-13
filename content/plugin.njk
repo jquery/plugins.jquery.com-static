@@ -7,7 +7,7 @@
     // Sliced in development or the server gets bogged down
     before: (paginationData) => {
       const data = process.env.NODE_ENV === 'development'
-        ? paginationData.slice(0, 5)
+        ? paginationData.slice(0, 2)
         : paginationData
       return data.flatMap((plugin) => {
         return plugin.posts.map((post) => {
