@@ -50,7 +50,7 @@
   inset: 0;
   text-align: center;
   font-size: 1.5rem /* 24px */;
-  line-height: 26px;
+  line-height: 21px;
   color: rgb(255 255 255 / 0.3);
 }
 .pagefind-ui__hidden,
