@@ -54,7 +54,7 @@ jobs:
         env:
           NODE_ENV: production
           NODE_OPTIONS: '--max-old-space-size=8192'
-        run: npm run build -- --pathprefix="/plugins.jquery.com/"
+        run: npm run build
 
       - name: Push to branch
         # Inspired by https://github.com/helaili/jekyll-action/blob/2.2.0/entrypoint.sh
