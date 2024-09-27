@@ -1,2 +1,0 @@
-site: _site
-glob: '**/[!404]*.{html}'

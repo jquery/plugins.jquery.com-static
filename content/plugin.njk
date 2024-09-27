@@ -94,9 +94,9 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               {% if post.version == plugin.current %}
-                <div class="font-bold font-serif">{{ post.version }}</div>
+                <div class="font-bold font-title">{{ post.version }}</div>
               {% else %}
-                <a class="font-bold font-serif" href="{{ plugin.url }}{% if post.name != plugin.latest %}/{{ post.version }}{% endif %}">
+                <a class="font-bold font-title" href="{{ plugin.url }}{% if post.name != plugin.latest %}/{{ post.version }}{% endif %}">
                   {{ post.version }}
                 </a>
               {% endif %}
@@ -112,7 +112,7 @@
   <div class="flex flex-col w-full bg-sidebar-gradient gap-4 border-l border-l-white-dark lg:pl-5 lg:max-w-[330px]">
 
     <div class="w-full rounded-lg border border-black bg-black shadow-[0_0_5px_rgba(0,0,0,0.5)]">
-      <div class="flex flex-col w-full border border-gray-light rounded-lg bg-[#202020] text-white font-bold font-serif">
+      <div class="flex flex-col w-full border border-gray-light rounded-lg bg-[#202020] text-white font-bold font-title">
 
         <div class="flex flex-col py-2 px-4">
           <div class="flex flex-row justify-between items-center">
@@ -163,7 +163,7 @@
         {% include "icons/github.svg" %}
         GitHub Activity
       </h3>
-      <div class="flex flex-row gap-3 font-extrabold font-serif text-center">
+      <div class="flex flex-row gap-3 font-extrabold font-title text-center">
         <div class="flex flex-col">
           <div class="py-[2px] px-2 rounded-t bg-black leading-tight text-white text-4xl">{{ watchers[plugin.id].watchers }}</div>
           <div class="py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
