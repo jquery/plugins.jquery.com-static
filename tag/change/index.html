@@ -11,24 +11,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
-    <link rel="stylesheet" href="/style.css?v=1713837929437"/>
-    
-    <style type="text/css">
-      @font-face {
-        font-family: Cairo;
-        src: url(/fonts/Cairo/Cairo-Bold.ttf) format("truetype");
-        font-weight: bold;
-      }
-      .bg-dark-tiles {
-        background-image: url(/img/dark-grey-tile.png);
-      }
-      .pagefind-ui__form:after {
-        background: url(/img/search.svg) no-repeat 2px center;
-      }
-      .list-custom-bullet {
-        list-style-image: url(/img/bullet.png);
-      }
-    </style>
+    <link rel="stylesheet" href="/style.css?v=1727482701474"/>
   </head>
   <body class="flex flex-col h-full items-center">
     <a href="#skip" class="sr-only">Skip to main content</a>
@@ -90,11 +73,12 @@
       </li>
     </ul>
     <input id="jq-menutoggle" type="checkbox" class="peer/menu hamburger-toggle sr-only"/>
-    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
+    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines cursor-pointer flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </label>
+    <script async src="/menu.js" type="text/javascript"></script>
     <nav class="fixed top-[34px] inset-x-0 bottom-0 bg-gray-dark text-white py-4 lg:relative lg:inset-auto lg:bg-transparent lg:p-0 lg:opacity-100 lg:transform-none peer-checked/menu:opacity-100 peer-checked/menu:transform-none opacity-0 translate-x-full transition-[opacity,transform] overflow-y-auto lg:overflow-visible">
   <ul class="lg:flex lg:flex-row lg:border-l lg:border-l-white/10 lg:border-r lg:border-r-gray-dark">
     <li class="dropdown">
@@ -162,25 +146,6 @@
     </li>
   </ul>
 </nav>
-<script>
-  (function () {
-    const checkbox = document.getElementById('jq-menutoggle')
-    checkbox.addEventListener('change', function () {
-      if (this.checked) {
-        document
-          .body
-          .classList
-          .add('overflow-hidden')
-        document.body.scrollTop = 0
-      } else {
-        document
-          .body
-          .classList
-          .remove('overflow-hidden')
-      }
-    })
-  })()
-</script>
 
   </div>
 </header>
@@ -190,19 +155,6 @@
         <img alt="jQuery Logo" src="/img/logo-white.svg" width="233" height="66"/>
       </a>
       <div id="search" class="relative w-full lg:rounded-t-xl lg:bg-black/20 lg:h-[50px] lg:flex lg:items-center lg:justify-end lg:px-4 lg:shadow-[0_0_5px_rgba(0,0,0,0.7)] lg:border-t lg:border-x lg:border-t-white/30 lg:border-x-black/30"></div>
-<script src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
-<script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    new PagefindUI({
-      element: "#search",
-      showImages: false,
-      translations: {
-        placeholder: 'Search',
-        zero_results: 'No matches found.'
-      }
-    })
-  })
-</script>
 
       <main id="skip" class="relative flex flex-col w-full mt-4 -mb-4 shadow-[-3px_0_5px_-3px_rgb(0,0,0,0.8),3px_0_5px_-3px_rgb(0,0,0,0.8)] bg-white rounded-xl lg:rounded-t-none overflow-hidden lg:mt-0">
         
@@ -215,7 +167,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/are-you-sure">Are You Sure? - a dirty forms check plugin</a>
+    <a class="text-xl font-bold font-title" href="/are-you-sure">Are You Sure? - a dirty forms check plugin</a>
     <p>Are-you-sure is simple light-weight dirty forms JQuery Plugin for modern browsers. It helps prevent users from loosing unsaved form changes by prompting the user to save/submit. It&#39;s dependency free and designed for modern browsers... just the features you need and nothing more! See the project page and demo for usage and examples.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -223,7 +175,7 @@
       <p>1.9.0</p>
       <p>Released August 12, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">506</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -239,7 +191,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/ajaxify">Ajaxify</a>
+    <a class="text-xl font-bold font-title" href="/ajaxify">Ajaxify</a>
     <p>Ajaxify your site out of the box, instantly.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -247,7 +199,7 @@
       <p>4.9.0</p>
       <p>Released October 2, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">272</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -263,7 +215,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/watch">jQuery Watch.js</a>
+    <a class="text-xl font-bold font-title" href="/watch">jQuery Watch.js</a>
     <p>A jQuery plugin for watching CSS property or element attribute changes.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -271,7 +223,7 @@
       <p>2.0.4</p>
       <p>Released September 29, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">129</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -287,7 +239,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/Kool-Swap">Kool Swap</a>
+    <a class="text-xl font-bold font-title" href="/Kool-Swap">Kool Swap</a>
     <p>Kool Swap enables impressively ajax page load support with history for websites. Just tell the plugin what should be switched and swap pages in a nice way!</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -295,7 +247,7 @@
       <p>0.5.5</p>
       <p>Released October 26, 2013</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">23</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -311,7 +263,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/update">jQuery DOM Polling Plugin</a>
+    <a class="text-xl font-bold font-title" href="/update">jQuery DOM Polling Plugin</a>
     <p>Allows you add custom events that can be precisely configured to track changes on DOM nodes (from simple form text updates to tracking anything like CSS position). These events support jQuery Event API (including event delegation!). Plays nicely with resources, monitors DOM updates, clears caches whenever necessary</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -319,7 +271,7 @@
       <p>3.0.1</p>
       <p>Released May 22, 2013</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">8</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -335,7 +287,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/break">jQuery Breakpoint</a>
+    <a class="text-xl font-bold font-title" href="/break">jQuery Breakpoint</a>
     <p>Allows useful callbacks to be fired at set &#92;&quot;breakpoints&#92;&quot; or window sizes reached upon resizing the viewport so as to create responsive web applications.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -343,7 +295,7 @@
       <p>1.0.0</p>
       <p>Released March 25, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">3</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -359,7 +311,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/changeOrDelayedKeyListener">jQuery on Change or Delayed Key Event Listener</a>
+    <a class="text-xl font-bold font-title" href="/changeOrDelayedKeyListener">jQuery on Change or Delayed Key Event Listener</a>
     <p>jQuery plugin to subscribe to change and a delayed key event on an element.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -367,7 +319,7 @@
       <p>1.0.0</p>
       <p>Released January 18, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">1</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -383,7 +335,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/eye">jQuery Eye</a>
+    <a class="text-xl font-bold font-title" href="/eye">jQuery Eye</a>
     <p>jQuery.eye is a jQuery plugin for monitoring changes made to elements&#39; DOM or CSS properties as well as monitoring changes of the returned results from jQuery methods ran on a given element. When a change is detected a callback function is fired. Additionally provided are methods for pausing a watch, starting a watch, and retrieving a watch status associated with an element.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -391,7 +343,7 @@
       <p>1.1.0</p>
       <p>Released May 5, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">1</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -407,7 +359,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/client-is-always-wrong">Client is always wrong</a>
+    <a class="text-xl font-bold font-title" href="/client-is-always-wrong">Client is always wrong</a>
     <p>A jQuery plugin that changes selector properties during a specific amount of days</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -415,7 +367,7 @@
       <p>1.0.3</p>
       <p>Released April 14, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">0</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -567,5 +519,6 @@
   </div>
 </footer>
 
+    <script async src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
   </body>
 </html>

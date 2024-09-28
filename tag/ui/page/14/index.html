@@ -11,24 +11,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
-    <link rel="stylesheet" href="/style.css?v=1713837929437"/>
-    
-    <style type="text/css">
-      @font-face {
-        font-family: Cairo;
-        src: url(/fonts/Cairo/Cairo-Bold.ttf) format("truetype");
-        font-weight: bold;
-      }
-      .bg-dark-tiles {
-        background-image: url(/img/dark-grey-tile.png);
-      }
-      .pagefind-ui__form:after {
-        background: url(/img/search.svg) no-repeat 2px center;
-      }
-      .list-custom-bullet {
-        list-style-image: url(/img/bullet.png);
-      }
-    </style>
+    <link rel="stylesheet" href="/style.css?v=1727482701474"/>
   </head>
   <body class="flex flex-col h-full items-center">
     <a href="#skip" class="sr-only">Skip to main content</a>
@@ -90,11 +73,12 @@
       </li>
     </ul>
     <input id="jq-menutoggle" type="checkbox" class="peer/menu hamburger-toggle sr-only"/>
-    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
+    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines cursor-pointer flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </label>
+    <script async src="/menu.js" type="text/javascript"></script>
     <nav class="fixed top-[34px] inset-x-0 bottom-0 bg-gray-dark text-white py-4 lg:relative lg:inset-auto lg:bg-transparent lg:p-0 lg:opacity-100 lg:transform-none peer-checked/menu:opacity-100 peer-checked/menu:transform-none opacity-0 translate-x-full transition-[opacity,transform] overflow-y-auto lg:overflow-visible">
   <ul class="lg:flex lg:flex-row lg:border-l lg:border-l-white/10 lg:border-r lg:border-r-gray-dark">
     <li class="dropdown">
@@ -162,25 +146,6 @@
     </li>
   </ul>
 </nav>
-<script>
-  (function () {
-    const checkbox = document.getElementById('jq-menutoggle')
-    checkbox.addEventListener('change', function () {
-      if (this.checked) {
-        document
-          .body
-          .classList
-          .add('overflow-hidden')
-        document.body.scrollTop = 0
-      } else {
-        document
-          .body
-          .classList
-          .remove('overflow-hidden')
-      }
-    })
-  })()
-</script>
 
   </div>
 </header>
@@ -190,19 +155,6 @@
         <img alt="jQuery Logo" src="/img/logo-white.svg" width="233" height="66"/>
       </a>
       <div id="search" class="relative w-full lg:rounded-t-xl lg:bg-black/20 lg:h-[50px] lg:flex lg:items-center lg:justify-end lg:px-4 lg:shadow-[0_0_5px_rgba(0,0,0,0.7)] lg:border-t lg:border-x lg:border-t-white/30 lg:border-x-black/30"></div>
-<script src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
-<script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    new PagefindUI({
-      element: "#search",
-      showImages: false,
-      translations: {
-        placeholder: 'Search',
-        zero_results: 'No matches found.'
-      }
-    })
-  })
-</script>
 
       <main id="skip" class="relative flex flex-col w-full mt-4 -mb-4 shadow-[-3px_0_5px_-3px_rgb(0,0,0,0.8),3px_0_5px_-3px_rgb(0,0,0,0.8)] bg-white rounded-xl lg:rounded-t-none overflow-hidden lg:mt-0">
         
@@ -215,7 +167,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/kbw.countdown">jQuery Countdown</a>
+    <a class="text-xl font-bold font-title" href="/kbw.countdown">jQuery Countdown</a>
     <p>This plugin sets a div or span to show a countdown to a given time. * Standard or compact formats, or create your own layout. * Decide which periods to show. * Count up from a date/time instead. * Cater for timezone differences and synchronise with server time. * Over 50 localisations.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -223,7 +175,7 @@
       <p>2.0.1</p>
       <p>Released July 11, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">348</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -239,7 +191,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/kwicks">Kwicks for jQuery</a>
+    <a class="text-xl font-bold font-title" href="/kwicks">Kwicks for jQuery</a>
     <p>Sexy sliding panels with an emphasis on navigational interaction.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -247,7 +199,7 @@
       <p>2.2.1</p>
       <p>Released November 17, 2013</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">324</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -263,7 +215,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/bootstrap-autohidingnavbar">Bootstrap Auto-Hiding Navbar</a>
+    <a class="text-xl font-bold font-title" href="/bootstrap-autohidingnavbar">Bootstrap Auto-Hiding Navbar</a>
     <p>An extension for Bootstrap&#39;s fixed navbar which hides the navbar while the page is scrolling downwards and shows it the other way. The plugin is able to show/hide the navbar programmatically as well.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -271,7 +223,7 @@
       <p>1.0.0</p>
       <p>Released March 16, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">324</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -287,7 +239,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/selecter">Selecter</a>
+    <a class="text-xl font-bold font-title" href="/selecter">Selecter</a>
     <p>A jQuery plugin for replacing default select elements. Part of the Formstone Library.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -295,7 +247,7 @@
       <p>3.1.9</p>
       <p>Released September 2, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">323</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -311,7 +263,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/timecircles">jQuery TimeCircles</a>
+    <a class="text-xl font-bold font-title" href="/timecircles">jQuery TimeCircles</a>
     <p>TimeCircles is a jQuery plugin that provides a nice looking way to either count down towards a certain time, or to count up from a certain time. The goal for TimeCircles is to provide a simple yet dynamic tool that makes it very easy to provide visitors an attractive countdown or timer.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -319,7 +271,7 @@
       <p>1.5.3</p>
       <p>Released July 27, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">296</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -335,7 +287,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/colorpicker">Evol ColorPicker</a>
+    <a class="text-xl font-bold font-title" href="/colorpicker">Evol ColorPicker</a>
     <p>A jQuery UI widget for color picking (similar to the one in Microsoft Office 2010).</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -343,7 +295,7 @@
       <p>2.2.4</p>
       <p>Released September 25, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">289</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -359,7 +311,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/colorpicker-2">Evol ColorPicker</a>
+    <a class="text-xl font-bold font-title" href="/colorpicker-2">Evol ColorPicker</a>
     <p>A jQuery UI widget for color picking (similar to the one in Microsoft Office 2010).</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -367,7 +319,7 @@
       <p>2.2.4</p>
       <p>Released September 26, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">289</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -383,7 +335,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/highchartTable">highchartTable</a>
+    <a class="text-xl font-bold font-title" href="/highchartTable">highchartTable</a>
     <p>This plugin provides a simple way to convert HTML data tables to Highcharts graphs.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -391,7 +343,7 @@
       <p>1.0.4</p>
       <p>Released February 19, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">274</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -407,7 +359,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/ajaxify">Ajaxify</a>
+    <a class="text-xl font-bold font-title" href="/ajaxify">Ajaxify</a>
     <p>Ajaxify your site out of the box, instantly.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -415,7 +367,7 @@
       <p>4.9.0</p>
       <p>Released October 2, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">272</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -431,7 +383,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/layout">UI Layout</a>
+    <a class="text-xl font-bold font-title" href="/layout">UI Layout</a>
     <p>Create advanced UI layouts with sizable, collapsible, nested panels and tons of options. Layout can create any UI look you want; from simple headers or sidebars to a complex application with toolbars, menus, help-panels, status bars, sub-forms, etc. Integrates with and enhances other UI widgets, like tabs, accordions and dialogs, to create rich interfaces.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -439,7 +391,7 @@
       <p>1.4.3</p>
       <p>Released September 7, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">268</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -723,5 +675,6 @@
   </div>
 </footer>
 
+    <script async src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
   </body>
 </html>

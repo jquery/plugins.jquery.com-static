@@ -11,24 +11,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
-    <link rel="stylesheet" href="/style.css?v=1713837929437"/>
-    
-    <style type="text/css">
-      @font-face {
-        font-family: Cairo;
-        src: url(/fonts/Cairo/Cairo-Bold.ttf) format("truetype");
-        font-weight: bold;
-      }
-      .bg-dark-tiles {
-        background-image: url(/img/dark-grey-tile.png);
-      }
-      .pagefind-ui__form:after {
-        background: url(/img/search.svg) no-repeat 2px center;
-      }
-      .list-custom-bullet {
-        list-style-image: url(/img/bullet.png);
-      }
-    </style>
+    <link rel="stylesheet" href="/style.css?v=1727482701474"/>
   </head>
   <body class="flex flex-col h-full items-center">
     <a href="#skip" class="sr-only">Skip to main content</a>
@@ -90,11 +73,12 @@
       </li>
     </ul>
     <input id="jq-menutoggle" type="checkbox" class="peer/menu hamburger-toggle sr-only"/>
-    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
+    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines cursor-pointer flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </label>
+    <script async src="/menu.js" type="text/javascript"></script>
     <nav class="fixed top-[34px] inset-x-0 bottom-0 bg-gray-dark text-white py-4 lg:relative lg:inset-auto lg:bg-transparent lg:p-0 lg:opacity-100 lg:transform-none peer-checked/menu:opacity-100 peer-checked/menu:transform-none opacity-0 translate-x-full transition-[opacity,transform] overflow-y-auto lg:overflow-visible">
   <ul class="lg:flex lg:flex-row lg:border-l lg:border-l-white/10 lg:border-r lg:border-r-gray-dark">
     <li class="dropdown">
@@ -162,25 +146,6 @@
     </li>
   </ul>
 </nav>
-<script>
-  (function () {
-    const checkbox = document.getElementById('jq-menutoggle')
-    checkbox.addEventListener('change', function () {
-      if (this.checked) {
-        document
-          .body
-          .classList
-          .add('overflow-hidden')
-        document.body.scrollTop = 0
-      } else {
-        document
-          .body
-          .classList
-          .remove('overflow-hidden')
-      }
-    })
-  })()
-</script>
 
   </div>
 </header>
@@ -190,19 +155,6 @@
         <img alt="jQuery Logo" src="/img/logo-white.svg" width="233" height="66"/>
       </a>
       <div id="search" class="relative w-full lg:rounded-t-xl lg:bg-black/20 lg:h-[50px] lg:flex lg:items-center lg:justify-end lg:px-4 lg:shadow-[0_0_5px_rgba(0,0,0,0.7)] lg:border-t lg:border-x lg:border-t-white/30 lg:border-x-black/30"></div>
-<script src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
-<script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    new PagefindUI({
-      element: "#search",
-      showImages: false,
-      translations: {
-        placeholder: 'Search',
-        zero_results: 'No matches found.'
-      }
-    })
-  })
-</script>
 
       <main id="skip" class="relative flex flex-col w-full mt-4 -mb-4 shadow-[-3px_0_5px_-3px_rgb(0,0,0,0.8),3px_0_5px_-3px_rgb(0,0,0,0.8)] bg-white rounded-xl lg:rounded-t-none overflow-hidden lg:mt-0">
         
@@ -215,7 +167,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/ui.effect-scale">jQuery UI Scale Effect</a>
+    <a class="text-xl font-bold font-title" href="/ui.effect-scale">jQuery UI Scale Effect</a>
     <p>Grows or shrinks an element and its content. Restores an element to its original size.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -223,7 +175,7 @@
       <p>1.11.1</p>
       <p>Released August 13, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">11190</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -239,7 +191,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/image-scale">Image Scale</a>
+    <a class="text-xl font-bold font-title" href="/image-scale">Image Scale</a>
     <p>Scale images to fit or fill any target container via two simple properties: scale and align.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -247,7 +199,7 @@
       <p>1.3.2</p>
       <p>Released August 4, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">156</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -263,7 +215,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/ae.image.resize">Image Resize</a>
+    <a class="text-xl font-bold font-title" href="/ae.image.resize">Image Resize</a>
     <p>A super light jQuery plugin (less than 0.5KB) to dynamically resize the images without distorting the proportions or adding any extra HTML.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -271,7 +223,7 @@
       <p>2.1.3</p>
       <p>Released March 25, 2013</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">84</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -287,7 +239,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/jquery.sizing">jQuery Sizing</a>
+    <a class="text-xl font-bold font-title" href="/jquery.sizing">jQuery Sizing</a>
     <p>Bundle of sizing functions, exposed as a jQuery plugin</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -295,7 +247,7 @@
       <p>2.0.1</p>
       <p>Released September 24, 2013</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">18</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -311,7 +263,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/jquery.jit-image">jQuery JIT image</a>
+    <a class="text-xl font-bold font-title" href="/jquery.jit-image">jQuery JIT image</a>
     <p>This jQuery plugin facilitates the use of jit image manipulation on the server and medias queries. It also fetches retina image usign device pixel ratio.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -319,7 +271,7 @@
       <p>1.3.0</p>
       <p>Released June 25, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">14</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -335,7 +287,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/touch">jQuery Touch</a>
+    <a class="text-xl font-bold font-title" href="/touch">jQuery Touch</a>
     <p>Drag, scale and rotate elements during touch.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -343,7 +295,7 @@
       <p>0.0.5</p>
       <p>Released February 25, 2013</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">6</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -359,7 +311,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/chunkIt">Chunk It - Crop and Gridify the Image</a>
+    <a class="text-xl font-bold font-title" href="/chunkIt">Chunk It - Crop and Gridify the Image</a>
     <p>jQuery plugin for image crop and custom UI rendering and merging them with any jQuery plugin and any kind of javascript event handler.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -367,7 +319,7 @@
       <p>1.0.1</p>
       <p>Released July 21, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">3</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -383,7 +335,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/jqscale">jquery Scale</a>
+    <a class="text-xl font-bold font-title" href="/jqscale">jquery Scale</a>
     <p>a jQuery plugin that will GET / CALCULATE (including inherited scaling from parent Nodes) / SET the css-scale factor (via transform: matrix) of dom-elements</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -391,7 +343,7 @@
       <p>0.1.2</p>
       <p>Released February 25, 2013</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">0</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -407,7 +359,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/ulslide">jQuery.ulSlide</a>
+    <a class="text-xl font-bold font-title" href="/ulslide">jQuery.ulSlide</a>
     <p>Slider (or carousel) that supports HTML5 (CSS3) &#92;&quot;3D Flip&#92;&quot;, &#92;&quot;3D Cube&#92;&quot;, &#92;&quot;Rotate&#92;&quot;, &#92;&quot;Scale&#92;&quot;, &#92;&quot;Slide&#92;&quot;, &#92;&quot;Crossfade&#92;&quot;, &#92;&quot;Fade&#92;&quot; and &#92;&quot;Carousel&#92;&quot; effects. Flexible, secure for html layout (do not changes structure of HTML) and very simple to use. The plugin supports Responsive design, images Preloading, Lazy Load and Ajax. Any HTML can be used as slide content (not only images). If the Mousewheel plugin has been included on the page then the slider will also respond to the mouse wheel. (Set &#92;&quot;mousewheel&#92;&quot; option as &#92;&quot;true&#92;&quot;)</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -415,7 +367,7 @@
       <p>1.5.5</p>
       <p>Released December 2, 2013</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">0</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -431,7 +383,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/smart3d">jQuery.Smart3D</a>
+    <a class="text-xl font-bold font-title" href="/smart3d">jQuery.Smart3D</a>
     <p>Pseudo 3D effect jQuery plugin. Very simple to use: several layers glued together into a 3D effect. Can be used on site-header.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -439,7 +391,7 @@
       <p>0.3.4</p>
       <p>Released April 6, 2013</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">0</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -591,5 +543,6 @@
   </div>
 </footer>
 
+    <script async src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
   </body>
 </html>

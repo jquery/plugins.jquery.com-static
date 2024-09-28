@@ -11,24 +11,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
-    <link rel="stylesheet" href="/style.css?v=1713837929437"/>
-    
-    <style type="text/css">
-      @font-face {
-        font-family: Cairo;
-        src: url(/fonts/Cairo/Cairo-Bold.ttf) format("truetype");
-        font-weight: bold;
-      }
-      .bg-dark-tiles {
-        background-image: url(/img/dark-grey-tile.png);
-      }
-      .pagefind-ui__form:after {
-        background: url(/img/search.svg) no-repeat 2px center;
-      }
-      .list-custom-bullet {
-        list-style-image: url(/img/bullet.png);
-      }
-    </style>
+    <link rel="stylesheet" href="/style.css?v=1727482701474"/>
   </head>
   <body class="flex flex-col h-full items-center">
     <a href="#skip" class="sr-only">Skip to main content</a>
@@ -90,11 +73,12 @@
       </li>
     </ul>
     <input id="jq-menutoggle" type="checkbox" class="peer/menu hamburger-toggle sr-only"/>
-    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
+    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines cursor-pointer flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </label>
+    <script async src="/menu.js" type="text/javascript"></script>
     <nav class="fixed top-[34px] inset-x-0 bottom-0 bg-gray-dark text-white py-4 lg:relative lg:inset-auto lg:bg-transparent lg:p-0 lg:opacity-100 lg:transform-none peer-checked/menu:opacity-100 peer-checked/menu:transform-none opacity-0 translate-x-full transition-[opacity,transform] overflow-y-auto lg:overflow-visible">
   <ul class="lg:flex lg:flex-row lg:border-l lg:border-l-white/10 lg:border-r lg:border-r-gray-dark">
     <li class="dropdown">
@@ -162,25 +146,6 @@
     </li>
   </ul>
 </nav>
-<script>
-  (function () {
-    const checkbox = document.getElementById('jq-menutoggle')
-    checkbox.addEventListener('change', function () {
-      if (this.checked) {
-        document
-          .body
-          .classList
-          .add('overflow-hidden')
-        document.body.scrollTop = 0
-      } else {
-        document
-          .body
-          .classList
-          .remove('overflow-hidden')
-      }
-    })
-  })()
-</script>
 
   </div>
 </header>
@@ -190,19 +155,6 @@
         <img alt="jQuery Logo" src="/img/logo-white.svg" width="233" height="66"/>
       </a>
       <div id="search" class="relative w-full lg:rounded-t-xl lg:bg-black/20 lg:h-[50px] lg:flex lg:items-center lg:justify-end lg:px-4 lg:shadow-[0_0_5px_rgba(0,0,0,0.7)] lg:border-t lg:border-x lg:border-t-white/30 lg:border-x-black/30"></div>
-<script src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
-<script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    new PagefindUI({
-      element: "#search",
-      showImages: false,
-      translations: {
-        placeholder: 'Search',
-        zero_results: 'No matches found.'
-      }
-    })
-  })
-</script>
 
       <main id="skip" class="relative flex flex-col w-full mt-4 -mb-4 shadow-[-3px_0_5px_-3px_rgb(0,0,0,0.8),3px_0_5px_-3px_rgb(0,0,0,0.8)] bg-white rounded-xl lg:rounded-t-none overflow-hidden lg:mt-0">
         
@@ -215,7 +167,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/jsForm">jQuery JSON Form</a>
+    <a class="text-xl font-bold font-title" href="/jsForm">jQuery JSON Form</a>
     <p>jQuery based form library that allows you to handle data within a js object (i.e. JSON) with html forms.&#92;
 You can modify all fields/properties by simply creating a html form with the correct naming schema (MVVM Pattern).&#92;
 &#92;
@@ -234,7 +186,7 @@ The main features of this library are:&#92;
       <p>1.2.0</p>
       <p>Released September 11, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">67</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -250,7 +202,7 @@ The main features of this library are:&#92;
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/form-autofill">jQuery form auto fill</a>
+    <a class="text-xl font-bold font-title" href="/form-autofill">jQuery form auto fill</a>
     <p>Simply autofill an empty form with data.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -258,7 +210,7 @@ The main features of this library are:&#92;
       <p>0.1.1</p>
       <p>Released February 12, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">67</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -274,7 +226,7 @@ The main features of this library are:&#92;
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/jinplace">Jinplace - A plugin for in place editing</a>
+    <a class="text-xl font-bold font-title" href="/jinplace">Jinplace - A plugin for in place editing</a>
     <p>A jQuery plugin for in place editing on a page, primarly controlled by HTML markup.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -282,7 +234,7 @@ The main features of this library are:&#92;
       <p>1.0.1</p>
       <p>Released June 20, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">64</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -298,7 +250,7 @@ The main features of this library are:&#92;
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/html5-form-validation">jQuery Form Validation</a>
+    <a class="text-xl font-bold font-title" href="/html5-form-validation">jQuery Form Validation</a>
     <p>jQuery plugin that provides a client site form validation with builtin options and deep customization.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -306,7 +258,7 @@ The main features of this library are:&#92;
       <p>1.4.0</p>
       <p>Released September 28, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">64</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -322,7 +274,7 @@ The main features of this library are:&#92;
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/plainoverlay">plainOverlay</a>
+    <a class="text-xl font-bold font-title" href="/plainoverlay">plainOverlay</a>
     <p>The simple jQuery Plugin for customizable overlay which covers a page, elements or iframe-windows that is specified.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -330,7 +282,7 @@ The main features of this library are:&#92;
       <p>0.5.4</p>
       <p>Released September 14, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">61</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -346,7 +298,7 @@ The main features of this library are:&#92;
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/dproCombobox">dproCombobox</a>
+    <a class="text-xl font-bold font-title" href="/dproCombobox">dproCombobox</a>
     <p>A combobox plugin</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -354,7 +306,7 @@ The main features of this library are:&#92;
       <p>1.0.0</p>
       <p>Released November 30, 2013</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">54</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -370,7 +322,7 @@ The main features of this library are:&#92;
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/simpleCombobox">Simple Combobox</a>
+    <a class="text-xl font-bold font-title" href="/simpleCombobox">Simple Combobox</a>
     <p>A combobox plugin</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -378,7 +330,7 @@ The main features of this library are:&#92;
       <p>1.1.10</p>
       <p>Released June 7, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">54</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -394,7 +346,7 @@ The main features of this library are:&#92;
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/add-input-area">jquery.add-input-area</a>
+    <a class="text-xl font-bold font-title" href="/add-input-area">jquery.add-input-area</a>
     <p>jQuery plugin for adding or deleting Form elements.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -402,7 +354,7 @@ The main features of this library are:&#92;
       <p>4.7.1</p>
       <p>Released August 7, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">50</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -418,7 +370,7 @@ The main features of this library are:&#92;
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/wheelcolorpicker">Wheel Color Picker</a>
+    <a class="text-xl font-bold font-title" href="/wheelcolorpicker">Wheel Color Picker</a>
     <p>A jQuery plugin to add color picker functionality to HTML form inputs in the round color wheel fashion.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -426,7 +378,7 @@ The main features of this library are:&#92;
       <p>2.2.0</p>
       <p>Released December 18, 2013</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">47</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -442,7 +394,7 @@ The main features of this library are:&#92;
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/clearsearch">jQuery ClearSearch</a>
+    <a class="text-xl font-bold font-title" href="/clearsearch">jQuery ClearSearch</a>
     <p>A search input field plugin for jQuery.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -450,7 +402,7 @@ The main features of this library are:&#92;
       <p>1.0.3</p>
       <p>Released May 14, 2013</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">43</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -682,5 +634,6 @@ The main features of this library are:&#92;
   </div>
 </footer>
 
+    <script async src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
   </body>
 </html>

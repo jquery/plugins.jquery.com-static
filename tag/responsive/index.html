@@ -11,24 +11,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
-    <link rel="stylesheet" href="/style.css?v=1713837929437"/>
-    
-    <style type="text/css">
-      @font-face {
-        font-family: Cairo;
-        src: url(/fonts/Cairo/Cairo-Bold.ttf) format("truetype");
-        font-weight: bold;
-      }
-      .bg-dark-tiles {
-        background-image: url(/img/dark-grey-tile.png);
-      }
-      .pagefind-ui__form:after {
-        background: url(/img/search.svg) no-repeat 2px center;
-      }
-      .list-custom-bullet {
-        list-style-image: url(/img/bullet.png);
-      }
-    </style>
+    <link rel="stylesheet" href="/style.css?v=1727482701474"/>
   </head>
   <body class="flex flex-col h-full items-center">
     <a href="#skip" class="sr-only">Skip to main content</a>
@@ -90,11 +73,12 @@
       </li>
     </ul>
     <input id="jq-menutoggle" type="checkbox" class="peer/menu hamburger-toggle sr-only"/>
-    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
+    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines cursor-pointer flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </label>
+    <script async src="/menu.js" type="text/javascript"></script>
     <nav class="fixed top-[34px] inset-x-0 bottom-0 bg-gray-dark text-white py-4 lg:relative lg:inset-auto lg:bg-transparent lg:p-0 lg:opacity-100 lg:transform-none peer-checked/menu:opacity-100 peer-checked/menu:transform-none opacity-0 translate-x-full transition-[opacity,transform] overflow-y-auto lg:overflow-visible">
   <ul class="lg:flex lg:flex-row lg:border-l lg:border-l-white/10 lg:border-r lg:border-r-gray-dark">
     <li class="dropdown">
@@ -162,25 +146,6 @@
     </li>
   </ul>
 </nav>
-<script>
-  (function () {
-    const checkbox = document.getElementById('jq-menutoggle')
-    checkbox.addEventListener('change', function () {
-      if (this.checked) {
-        document
-          .body
-          .classList
-          .add('overflow-hidden')
-        document.body.scrollTop = 0
-      } else {
-        document
-          .body
-          .classList
-          .remove('overflow-hidden')
-      }
-    })
-  })()
-</script>
 
   </div>
 </header>
@@ -190,19 +155,6 @@
         <img alt="jQuery Logo" src="/img/logo-white.svg" width="233" height="66"/>
       </a>
       <div id="search" class="relative w-full lg:rounded-t-xl lg:bg-black/20 lg:h-[50px] lg:flex lg:items-center lg:justify-end lg:px-4 lg:shadow-[0_0_5px_rgba(0,0,0,0.7)] lg:border-t lg:border-x lg:border-t-white/30 lg:border-x-black/30"></div>
-<script src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
-<script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    new PagefindUI({
-      element: "#search",
-      showImages: false,
-      translations: {
-        placeholder: 'Search',
-        zero_results: 'No matches found.'
-      }
-    })
-  })
-</script>
 
       <main id="skip" class="relative flex flex-col w-full mt-4 -mb-4 shadow-[-3px_0_5px_-3px_rgb(0,0,0,0.8),3px_0_5px_-3px_rgb(0,0,0,0.8)] bg-white rounded-xl lg:rounded-t-none overflow-hidden lg:mt-0">
         
@@ -215,7 +167,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/slick">slick</a>
+    <a class="text-xl font-bold font-title" href="/slick">slick</a>
     <p>A jQuery responsive touch carousel</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -223,7 +175,7 @@
       <p>1.3.11</p>
       <p>Released October 7, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">28143</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -239,7 +191,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/magnific-popup">Magnific Popup</a>
+    <a class="text-xl font-bold font-title" href="/magnific-popup">Magnific Popup</a>
     <p>Fast, light, mobile-friendly and responsive lightbox and modal dialog plugin. Open inline HTML, ajax loaded content, image, form, iframe (YouTube video, Vimeo, Google Maps), photo gallery. Animation effects added with CSS3 transitions. For jQuery or Zepto.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -247,7 +199,7 @@
       <p>0.9.9</p>
       <p>Released November 15, 2013</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">11383</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -263,7 +215,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/pickadate">pickadate.js</a>
+    <a class="text-xl font-bold font-title" href="/pickadate">pickadate.js</a>
     <p>The mobile-friendly, responsive, and lightweight jQuery date &amp; time input picker.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -271,7 +223,7 @@
       <p>3.5.4</p>
       <p>Released September 11, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">7702</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -287,7 +239,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/iframeResizer">Iframe Resizer</a>
+    <a class="text-xl font-bold font-title" href="/iframeResizer">Iframe Resizer</a>
     <p>Responsively keep same and cross domain iFrames sized to their content with support for window/content resizing, multiple and nested iFrames. (Works with IE8+)</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -295,7 +247,7 @@
       <p>2.6.1</p>
       <p>Released September 3, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">6446</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -311,7 +263,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/lightGallery">jQuery lightGallery</a>
+    <a class="text-xl font-bold font-title" href="/lightGallery">jQuery lightGallery</a>
     <p>JQuery lightGallery is a lightweight jQuery lightbox gallery for displaying image and video gallery.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -319,7 +271,7 @@
       <p>1.1.3</p>
       <p>Released September 16, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">6049</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -335,7 +287,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/mixitup">MixItUp</a>
+    <a class="text-xl font-bold font-title" href="/mixitup">MixItUp</a>
     <p>A CSS3 and jQuery Filter &amp; Sort Plugin</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -343,7 +295,7 @@
       <p>1.5.5</p>
       <p>Released November 13, 2013</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">4497</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -359,7 +311,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/blueimp-gallery">blueimp Gallery</a>
+    <a class="text-xl font-bold font-title" href="/blueimp-gallery">blueimp Gallery</a>
     <p>blueimp Gallery is a touch-enabled, responsive and customizable image and video gallery, carousel and lightbox, optimized for both mobile and desktop web browsers. It features swipe, mouse and keyboard navigation, transition effects, slideshow functionality, fullscreen support and on-demand content loading and can be extended to display additional content types.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -367,7 +319,7 @@
       <p>2.15.1</p>
       <p>Released July 2, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">3701</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -383,7 +335,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/vide">Vide</a>
+    <a class="text-xl font-bold font-title" href="/vide">Vide</a>
     <p>Easy as hell jQuery plugin for video backgrounds.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -391,7 +343,7 @@
       <p>0.1.3</p>
       <p>Released October 3, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">3298</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -407,7 +359,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/vide-2">Vide</a>
+    <a class="text-xl font-bold font-title" href="/vide-2">Vide</a>
     <p>Easy as hell jQuery plugin for video backgrounds.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -415,7 +367,7 @@
       <p>0.1.0</p>
       <p>Released July 22, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">3298</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -431,7 +383,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/focuspoint">jQuery FocusPoint</a>
+    <a class="text-xl font-bold font-title" href="/focuspoint">jQuery FocusPoint</a>
     <p>jQuery plugin for &#39;responsive cropping&#39;. Dynamically crop images to fill available space without cutting out the image&#39;s subject. Great for full-screen images.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -439,7 +391,7 @@
       <p>1.0.3</p>
       <p>Released September 5, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">3164</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -639,5 +591,6 @@
   </div>
 </footer>
 
+    <script async src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
   </body>
 </html>

@@ -11,24 +11,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
-    <link rel="stylesheet" href="/style.css?v=1713837929437"/>
-    
-    <style type="text/css">
-      @font-face {
-        font-family: Cairo;
-        src: url(/fonts/Cairo/Cairo-Bold.ttf) format("truetype");
-        font-weight: bold;
-      }
-      .bg-dark-tiles {
-        background-image: url(/img/dark-grey-tile.png);
-      }
-      .pagefind-ui__form:after {
-        background: url(/img/search.svg) no-repeat 2px center;
-      }
-      .list-custom-bullet {
-        list-style-image: url(/img/bullet.png);
-      }
-    </style>
+    <link rel="stylesheet" href="/style.css?v=1727482701474"/>
   </head>
   <body class="flex flex-col h-full items-center">
     <a href="#skip" class="sr-only">Skip to main content</a>
@@ -90,11 +73,12 @@
       </li>
     </ul>
     <input id="jq-menutoggle" type="checkbox" class="peer/menu hamburger-toggle sr-only"/>
-    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
+    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines cursor-pointer flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </label>
+    <script async src="/menu.js" type="text/javascript"></script>
     <nav class="fixed top-[34px] inset-x-0 bottom-0 bg-gray-dark text-white py-4 lg:relative lg:inset-auto lg:bg-transparent lg:p-0 lg:opacity-100 lg:transform-none peer-checked/menu:opacity-100 peer-checked/menu:transform-none opacity-0 translate-x-full transition-[opacity,transform] overflow-y-auto lg:overflow-visible">
   <ul class="lg:flex lg:flex-row lg:border-l lg:border-l-white/10 lg:border-r lg:border-r-gray-dark">
     <li class="dropdown">
@@ -162,25 +146,6 @@
     </li>
   </ul>
 </nav>
-<script>
-  (function () {
-    const checkbox = document.getElementById('jq-menutoggle')
-    checkbox.addEventListener('change', function () {
-      if (this.checked) {
-        document
-          .body
-          .classList
-          .add('overflow-hidden')
-        document.body.scrollTop = 0
-      } else {
-        document
-          .body
-          .classList
-          .remove('overflow-hidden')
-      }
-    })
-  })()
-</script>
 
   </div>
 </header>
@@ -190,19 +155,6 @@
         <img alt="jQuery Logo" src="/img/logo-white.svg" width="233" height="66"/>
       </a>
       <div id="search" class="relative w-full lg:rounded-t-xl lg:bg-black/20 lg:h-[50px] lg:flex lg:items-center lg:justify-end lg:px-4 lg:shadow-[0_0_5px_rgba(0,0,0,0.7)] lg:border-t lg:border-x lg:border-t-white/30 lg:border-x-black/30"></div>
-<script src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
-<script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    new PagefindUI({
-      element: "#search",
-      showImages: false,
-      translations: {
-        placeholder: 'Search',
-        zero_results: 'No matches found.'
-      }
-    })
-  })
-</script>
 
       <main id="skip" class="relative flex flex-col w-full mt-4 -mb-4 shadow-[-3px_0_5px_-3px_rgb(0,0,0,0.8),3px_0_5px_-3px_rgb(0,0,0,0.8)] bg-white rounded-xl lg:rounded-t-none overflow-hidden lg:mt-0">
         
@@ -287,7 +239,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter">
+                <a class="font-bold font-title" href="/tablesorter">
                   2.17.8
                 </a>
               
@@ -299,7 +251,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.17.8">
+                <a class="font-bold font-title" href="/tablesorter/2.17.8">
                   2.17.8
                 </a>
               
@@ -311,7 +263,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.17.8">
+                <a class="font-bold font-title" href="/tablesorter/2.17.8">
                   2.17.8
                 </a>
               
@@ -323,7 +275,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <div class="font-bold font-serif">2.17.7</div>
+                <div class="font-bold font-title">2.17.7</div>
               
             </div>
             <div class="hidden lg:block"></div>
@@ -333,7 +285,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <div class="font-bold font-serif">2.17.7</div>
+                <div class="font-bold font-title">2.17.7</div>
               
             </div>
             <div class="hidden lg:block"></div>
@@ -343,7 +295,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <div class="font-bold font-serif">2.17.7</div>
+                <div class="font-bold font-title">2.17.7</div>
               
             </div>
             <div class="hidden lg:block"></div>
@@ -353,7 +305,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.17.6">
+                <a class="font-bold font-title" href="/tablesorter/2.17.6">
                   2.17.6
                 </a>
               
@@ -365,7 +317,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.17.6">
+                <a class="font-bold font-title" href="/tablesorter/2.17.6">
                   2.17.6
                 </a>
               
@@ -377,7 +329,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.17.6">
+                <a class="font-bold font-title" href="/tablesorter/2.17.6">
                   2.17.6
                 </a>
               
@@ -389,7 +341,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.17.4">
+                <a class="font-bold font-title" href="/tablesorter/2.17.4">
                   2.17.4
                 </a>
               
@@ -401,7 +353,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.17.4">
+                <a class="font-bold font-title" href="/tablesorter/2.17.4">
                   2.17.4
                 </a>
               
@@ -413,7 +365,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.17.3">
+                <a class="font-bold font-title" href="/tablesorter/2.17.3">
                   2.17.3
                 </a>
               
@@ -425,7 +377,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.17.3">
+                <a class="font-bold font-title" href="/tablesorter/2.17.3">
                   2.17.3
                 </a>
               
@@ -437,7 +389,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.17.2">
+                <a class="font-bold font-title" href="/tablesorter/2.17.2">
                   2.17.2
                 </a>
               
@@ -449,7 +401,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.17.1">
+                <a class="font-bold font-title" href="/tablesorter/2.17.1">
                   2.17.1
                 </a>
               
@@ -461,7 +413,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.17.0">
+                <a class="font-bold font-title" href="/tablesorter/2.17.0">
                   2.17.0
                 </a>
               
@@ -473,7 +425,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.16.4">
+                <a class="font-bold font-title" href="/tablesorter/2.16.4">
                   2.16.4
                 </a>
               
@@ -485,7 +437,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.16.3">
+                <a class="font-bold font-title" href="/tablesorter/2.16.3">
                   2.16.3
                 </a>
               
@@ -497,7 +449,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.16.2">
+                <a class="font-bold font-title" href="/tablesorter/2.16.2">
                   2.16.2
                 </a>
               
@@ -509,7 +461,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.16.1">
+                <a class="font-bold font-title" href="/tablesorter/2.16.1">
                   2.16.1
                 </a>
               
@@ -521,7 +473,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.16.0">
+                <a class="font-bold font-title" href="/tablesorter/2.16.0">
                   2.16.0
                 </a>
               
@@ -533,7 +485,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.16.1-beta">
+                <a class="font-bold font-title" href="/tablesorter/2.16.1-beta">
                   2.16.1-beta
                 </a>
               
@@ -545,7 +497,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.16.0-beta">
+                <a class="font-bold font-title" href="/tablesorter/2.16.0-beta">
                   2.16.0-beta
                 </a>
               
@@ -557,7 +509,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.15.14">
+                <a class="font-bold font-title" href="/tablesorter/2.15.14">
                   2.15.14
                 </a>
               
@@ -569,7 +521,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.15.13">
+                <a class="font-bold font-title" href="/tablesorter/2.15.13">
                   2.15.13
                 </a>
               
@@ -581,7 +533,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.15.12">
+                <a class="font-bold font-title" href="/tablesorter/2.15.12">
                   2.15.12
                 </a>
               
@@ -593,7 +545,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.15.10">
+                <a class="font-bold font-title" href="/tablesorter/2.15.10">
                   2.15.10
                 </a>
               
@@ -605,7 +557,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.15.9">
+                <a class="font-bold font-title" href="/tablesorter/2.15.9">
                   2.15.9
                 </a>
               
@@ -617,7 +569,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.15.8">
+                <a class="font-bold font-title" href="/tablesorter/2.15.8">
                   2.15.8
                 </a>
               
@@ -629,7 +581,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.15.7">
+                <a class="font-bold font-title" href="/tablesorter/2.15.7">
                   2.15.7
                 </a>
               
@@ -641,7 +593,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.15.6">
+                <a class="font-bold font-title" href="/tablesorter/2.15.6">
                   2.15.6
                 </a>
               
@@ -653,7 +605,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.15.5">
+                <a class="font-bold font-title" href="/tablesorter/2.15.5">
                   2.15.5
                 </a>
               
@@ -665,7 +617,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.15.4">
+                <a class="font-bold font-title" href="/tablesorter/2.15.4">
                   2.15.4
                 </a>
               
@@ -677,7 +629,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.15.3">
+                <a class="font-bold font-title" href="/tablesorter/2.15.3">
                   2.15.3
                 </a>
               
@@ -689,7 +641,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.15.2">
+                <a class="font-bold font-title" href="/tablesorter/2.15.2">
                   2.15.2
                 </a>
               
@@ -701,7 +653,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.15.2">
+                <a class="font-bold font-title" href="/tablesorter/2.15.2">
                   2.15.2
                 </a>
               
@@ -713,7 +665,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.15.1">
+                <a class="font-bold font-title" href="/tablesorter/2.15.1">
                   2.15.1
                 </a>
               
@@ -725,7 +677,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.15.0">
+                <a class="font-bold font-title" href="/tablesorter/2.15.0">
                   2.15.0
                 </a>
               
@@ -737,7 +689,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.14.5">
+                <a class="font-bold font-title" href="/tablesorter/2.14.5">
                   2.14.5
                 </a>
               
@@ -749,7 +701,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.14.4">
+                <a class="font-bold font-title" href="/tablesorter/2.14.4">
                   2.14.4
                 </a>
               
@@ -761,7 +713,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.14.3">
+                <a class="font-bold font-title" href="/tablesorter/2.14.3">
                   2.14.3
                 </a>
               
@@ -773,7 +725,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.14.2">
+                <a class="font-bold font-title" href="/tablesorter/2.14.2">
                   2.14.2
                 </a>
               
@@ -785,7 +737,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.14.1">
+                <a class="font-bold font-title" href="/tablesorter/2.14.1">
                   2.14.1
                 </a>
               
@@ -797,7 +749,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.14.0">
+                <a class="font-bold font-title" href="/tablesorter/2.14.0">
                   2.14.0
                 </a>
               
@@ -809,7 +761,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.13.3">
+                <a class="font-bold font-title" href="/tablesorter/2.13.3">
                   2.13.3
                 </a>
               
@@ -821,7 +773,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.13.2">
+                <a class="font-bold font-title" href="/tablesorter/2.13.2">
                   2.13.2
                 </a>
               
@@ -833,7 +785,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.13.1">
+                <a class="font-bold font-title" href="/tablesorter/2.13.1">
                   2.13.1
                 </a>
               
@@ -845,7 +797,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.13.0">
+                <a class="font-bold font-title" href="/tablesorter/2.13.0">
                   2.13.0
                 </a>
               
@@ -857,7 +809,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.12.0">
+                <a class="font-bold font-title" href="/tablesorter/2.12.0">
                   2.12.0
                 </a>
               
@@ -869,7 +821,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.11.1">
+                <a class="font-bold font-title" href="/tablesorter/2.11.1">
                   2.11.1
                 </a>
               
@@ -881,7 +833,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.11.0">
+                <a class="font-bold font-title" href="/tablesorter/2.11.0">
                   2.11.0
                 </a>
               
@@ -893,7 +845,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.10.8">
+                <a class="font-bold font-title" href="/tablesorter/2.10.8">
                   2.10.8
                 </a>
               
@@ -905,7 +857,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.10.7">
+                <a class="font-bold font-title" href="/tablesorter/2.10.7">
                   2.10.7
                 </a>
               
@@ -917,7 +869,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.10.6">
+                <a class="font-bold font-title" href="/tablesorter/2.10.6">
                   2.10.6
                 </a>
               
@@ -929,7 +881,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.10.5">
+                <a class="font-bold font-title" href="/tablesorter/2.10.5">
                   2.10.5
                 </a>
               
@@ -941,7 +893,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.10.4">
+                <a class="font-bold font-title" href="/tablesorter/2.10.4">
                   2.10.4
                 </a>
               
@@ -953,7 +905,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.10.3">
+                <a class="font-bold font-title" href="/tablesorter/2.10.3">
                   2.10.3
                 </a>
               
@@ -965,7 +917,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.10.2">
+                <a class="font-bold font-title" href="/tablesorter/2.10.2">
                   2.10.2
                 </a>
               
@@ -977,7 +929,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.10.1">
+                <a class="font-bold font-title" href="/tablesorter/2.10.1">
                   2.10.1
                 </a>
               
@@ -989,7 +941,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.10.0">
+                <a class="font-bold font-title" href="/tablesorter/2.10.0">
                   2.10.0
                 </a>
               
@@ -1001,7 +953,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.9.1">
+                <a class="font-bold font-title" href="/tablesorter/2.9.1">
                   2.9.1
                 </a>
               
@@ -1013,7 +965,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.9.1">
+                <a class="font-bold font-title" href="/tablesorter/2.9.1">
                   2.9.1
                 </a>
               
@@ -1025,7 +977,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.9.0">
+                <a class="font-bold font-title" href="/tablesorter/2.9.0">
                   2.9.0
                 </a>
               
@@ -1037,7 +989,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.8.2">
+                <a class="font-bold font-title" href="/tablesorter/2.8.2">
                   2.8.2
                 </a>
               
@@ -1049,7 +1001,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.8.1">
+                <a class="font-bold font-title" href="/tablesorter/2.8.1">
                   2.8.1
                 </a>
               
@@ -1061,7 +1013,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.8.0">
+                <a class="font-bold font-title" href="/tablesorter/2.8.0">
                   2.8.0
                 </a>
               
@@ -1073,7 +1025,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.7.12">
+                <a class="font-bold font-title" href="/tablesorter/2.7.12">
                   2.7.12
                 </a>
               
@@ -1085,7 +1037,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.7.11">
+                <a class="font-bold font-title" href="/tablesorter/2.7.11">
                   2.7.11
                 </a>
               
@@ -1097,7 +1049,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.7.10">
+                <a class="font-bold font-title" href="/tablesorter/2.7.10">
                   2.7.10
                 </a>
               
@@ -1109,7 +1061,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.7.9">
+                <a class="font-bold font-title" href="/tablesorter/2.7.9">
                   2.7.9
                 </a>
               
@@ -1121,7 +1073,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.7.8">
+                <a class="font-bold font-title" href="/tablesorter/2.7.8">
                   2.7.8
                 </a>
               
@@ -1133,7 +1085,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.7.7">
+                <a class="font-bold font-title" href="/tablesorter/2.7.7">
                   2.7.7
                 </a>
               
@@ -1145,7 +1097,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.7.6">
+                <a class="font-bold font-title" href="/tablesorter/2.7.6">
                   2.7.6
                 </a>
               
@@ -1157,7 +1109,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.7.5">
+                <a class="font-bold font-title" href="/tablesorter/2.7.5">
                   2.7.5
                 </a>
               
@@ -1169,7 +1121,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/tablesorter/2.7.4">
+                <a class="font-bold font-title" href="/tablesorter/2.7.4">
                   2.7.4
                 </a>
               
@@ -1185,7 +1137,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
   <div class="flex flex-col w-full bg-sidebar-gradient gap-4 border-l border-l-white-dark lg:pl-5 lg:max-w-[330px]">
 
     <div class="w-full rounded-lg border border-black bg-black shadow-[0_0_5px_rgba(0,0,0,0.5)]">
-      <div class="flex flex-col w-full border border-gray-light rounded-lg bg-[#202020] text-white font-bold font-serif">
+      <div class="flex flex-col w-full border border-gray-light rounded-lg bg-[#202020] text-white font-bold font-title">
 
         <div class="flex flex-col py-2 px-4">
           <div class="flex flex-row justify-between items-center">
@@ -1239,7 +1191,7 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
 
         GitHub Activity
       </h3>
-      <div class="flex flex-row gap-3 font-extrabold font-serif text-center">
+      <div class="flex flex-row gap-3 font-extrabold font-title text-center">
         <div class="flex flex-col">
           <div class="py-[2px] px-2 rounded-t bg-black leading-tight text-white text-4xl">2594</div>
           <div class="py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -1381,5 +1333,6 @@ This forked version adds lots of new enhancements including: alphanumeric sortin
   </div>
 </footer>
 
+    <script async src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
   </body>
 </html>

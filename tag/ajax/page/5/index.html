@@ -11,24 +11,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
-    <link rel="stylesheet" href="/style.css?v=1713837929437"/>
-    
-    <style type="text/css">
-      @font-face {
-        font-family: Cairo;
-        src: url(/fonts/Cairo/Cairo-Bold.ttf) format("truetype");
-        font-weight: bold;
-      }
-      .bg-dark-tiles {
-        background-image: url(/img/dark-grey-tile.png);
-      }
-      .pagefind-ui__form:after {
-        background: url(/img/search.svg) no-repeat 2px center;
-      }
-      .list-custom-bullet {
-        list-style-image: url(/img/bullet.png);
-      }
-    </style>
+    <link rel="stylesheet" href="/style.css?v=1727482701474"/>
   </head>
   <body class="flex flex-col h-full items-center">
     <a href="#skip" class="sr-only">Skip to main content</a>
@@ -90,11 +73,12 @@
       </li>
     </ul>
     <input id="jq-menutoggle" type="checkbox" class="peer/menu hamburger-toggle sr-only"/>
-    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
+    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines cursor-pointer flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </label>
+    <script async src="/menu.js" type="text/javascript"></script>
     <nav class="fixed top-[34px] inset-x-0 bottom-0 bg-gray-dark text-white py-4 lg:relative lg:inset-auto lg:bg-transparent lg:p-0 lg:opacity-100 lg:transform-none peer-checked/menu:opacity-100 peer-checked/menu:transform-none opacity-0 translate-x-full transition-[opacity,transform] overflow-y-auto lg:overflow-visible">
   <ul class="lg:flex lg:flex-row lg:border-l lg:border-l-white/10 lg:border-r lg:border-r-gray-dark">
     <li class="dropdown">
@@ -162,25 +146,6 @@
     </li>
   </ul>
 </nav>
-<script>
-  (function () {
-    const checkbox = document.getElementById('jq-menutoggle')
-    checkbox.addEventListener('change', function () {
-      if (this.checked) {
-        document
-          .body
-          .classList
-          .add('overflow-hidden')
-        document.body.scrollTop = 0
-      } else {
-        document
-          .body
-          .classList
-          .remove('overflow-hidden')
-      }
-    })
-  })()
-</script>
 
   </div>
 </header>
@@ -190,19 +155,6 @@
         <img alt="jQuery Logo" src="/img/logo-white.svg" width="233" height="66"/>
       </a>
       <div id="search" class="relative w-full lg:rounded-t-xl lg:bg-black/20 lg:h-[50px] lg:flex lg:items-center lg:justify-end lg:px-4 lg:shadow-[0_0_5px_rgba(0,0,0,0.7)] lg:border-t lg:border-x lg:border-t-white/30 lg:border-x-black/30"></div>
-<script src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
-<script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    new PagefindUI({
-      element: "#search",
-      showImages: false,
-      translations: {
-        placeholder: 'Search',
-        zero_results: 'No matches found.'
-      }
-    })
-  })
-</script>
 
       <main id="skip" class="relative flex flex-col w-full mt-4 -mb-4 shadow-[-3px_0_5px_-3px_rgb(0,0,0,0.8),3px_0_5px_-3px_rgb(0,0,0,0.8)] bg-white rounded-xl lg:rounded-t-none overflow-hidden lg:mt-0">
         
@@ -215,7 +167,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/jquery.mb.extruder">jQuery mb.extruder</a>
+    <a class="text-xl font-bold font-title" href="/jquery.mb.extruder">jQuery mb.extruder</a>
     <p>This plugin lets you easily build a sliding panel for any kind of content; it has all the functionalities built-in for menu and sub-menu panels with an accordion effect, and you can get the content via ajax.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -223,7 +175,7 @@
       <p>2.5.5</p>
       <p>Released May 9, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">102</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -239,7 +191,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/ajax-retry">jQuery Ajax Retry</a>
+    <a class="text-xl font-bold font-title" href="/ajax-retry">jQuery Ajax Retry</a>
     <p>Retry ajax calls using the deferred API</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -247,7 +199,7 @@
       <p>0.2.7</p>
       <p>Released August 9, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">100</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -263,7 +215,7 @@
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/dynatree">Dynatree</a>
+    <a class="text-xl font-bold font-title" href="/dynatree">Dynatree</a>
     <p>Dynatree is a JavaScript dynamic tree view plugin for jQuery with support for persistence, keyboard, checkboxes, drag&#39;n&#39;drop, and lazy loading.&#92;
 Note: The GitHub repository is currently only a stub for the SVN repository on https://code.google.com/p/dynatree/.</p>
   </div>
@@ -272,7 +224,7 @@ Note: The GitHub repository is currently only a stub for the SVN repository on h
       <p>1.2.4+4</p>
       <p>Released May 11, 2013</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">91</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -288,7 +240,7 @@ Note: The GitHub repository is currently only a stub for the SVN repository on h
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/loading-overlay">Loading Overlay</a>
+    <a class="text-xl font-bold font-title" href="/loading-overlay">Loading Overlay</a>
     <p>jQuery Loading Overlay Plugin</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -296,7 +248,7 @@ Note: The GitHub repository is currently only a stub for the SVN repository on h
       <p>1.0.2</p>
       <p>Released February 19, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">83</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -312,7 +264,7 @@ Note: The GitHub repository is currently only a stub for the SVN repository on h
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/jput">jPut JSON to HTML</a>
+    <a class="text-xl font-bold font-title" href="/jput">jPut JSON to HTML</a>
     <p>jPut is a small jquey plugin which you can put your JSON as customized HTML format easily.It supports loading JSON via ajax.jPut supports multidimensional json too. jPut also supports JSONP.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -320,7 +272,7 @@ Note: The GitHub repository is currently only a stub for the SVN repository on h
       <p>1.1.4</p>
       <p>Released October 4, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">82</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -336,7 +288,7 @@ Note: The GitHub repository is currently only a stub for the SVN repository on h
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/xmlrpc">XML-RPC over AJAX</a>
+    <a class="text-xl font-bold font-title" href="/xmlrpc">XML-RPC over AJAX</a>
     <p>Interact with remote XML-RPC services using AJAX</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -344,7 +296,7 @@ Note: The GitHub repository is currently only a stub for the SVN repository on h
       <p>0.4.3</p>
       <p>Released November 22, 2013</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">81</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -360,7 +312,7 @@ Note: The GitHub repository is currently only a stub for the SVN repository on h
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/jquery.mb.menu">jQuery mb.menu</a>
+    <a class="text-xl font-bold font-title" href="/jquery.mb.menu">jQuery mb.menu</a>
     <p>A powerful jQuery component that lets you easily build a multilevel menu or contextual menu (right click) in an intuitive way!&lt;br&gt;You can add as many sub menus as you want and if those are not defined in the page, the component will automatically get them via ajax from a specified template url.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -368,7 +320,7 @@ Note: The GitHub repository is currently only a stub for the SVN repository on h
       <p>2.9.7</p>
       <p>Released November 20, 2013</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">75</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -384,7 +336,7 @@ Note: The GitHub repository is currently only a stub for the SVN repository on h
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/googlemap">Google Map</a>
+    <a class="text-xl font-bold font-title" href="/googlemap">Google Map</a>
     <p>A jQuery Plugin allows you to easely manipulate the Google Map API. You are now able to create maps, add some markers and create routes.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -392,7 +344,7 @@ Note: The GitHub repository is currently only a stub for the SVN repository on h
       <p>1.4.2</p>
       <p>Released July 30, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">72</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -408,7 +360,7 @@ Note: The GitHub repository is currently only a stub for the SVN repository on h
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/aciTree">aciTree - A customizable treeview control</a>
+    <a class="text-xl font-bold font-title" href="/aciTree">aciTree - A customizable treeview control</a>
     <p>aciTree renders a treeview control based on a simple data structure. The tree can be lazy loaded node by node through AJAX or the entire tree can be loaded in one go, including directly from a JavaScript variable. A simple PHP implementation for a file system tree is provided as an example, but any server-side language can be used. The tree can be manipulated using the aciTree API. The tree items can be added, loaded, updated, removed, their order can be changed ... and much more.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -416,7 +368,7 @@ Note: The GitHub repository is currently only a stub for the SVN repository on h
       <p>4.4.0</p>
       <p>Released August 7, 2014</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">68</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -432,7 +384,7 @@ Note: The GitHub repository is currently only a stub for the SVN repository on h
 
   <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="/ytLoad">jquery.ytLoad</a>
+    <a class="text-xl font-bold font-title" href="/ytLoad">jquery.ytLoad</a>
     <p>A youtube inspired, simple, lightweight jQuery plugin to visualize ajax progress.</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -440,7 +392,7 @@ Note: The GitHub repository is currently only a stub for the SVN repository on h
       <p>1.1.0</p>
       <p>Released August 27, 2013</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">66</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -644,5 +596,6 @@ Note: The GitHub repository is currently only a stub for the SVN repository on h
   </div>
 </footer>
 
+    <script async src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
   </body>
 </html>

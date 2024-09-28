@@ -11,24 +11,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
-    <link rel="stylesheet" href="/style.css?v=1713837929437"/>
-    
-    <style type="text/css">
-      @font-face {
-        font-family: Cairo;
-        src: url(/fonts/Cairo/Cairo-Bold.ttf) format("truetype");
-        font-weight: bold;
-      }
-      .bg-dark-tiles {
-        background-image: url(/img/dark-grey-tile.png);
-      }
-      .pagefind-ui__form:after {
-        background: url(/img/search.svg) no-repeat 2px center;
-      }
-      .list-custom-bullet {
-        list-style-image: url(/img/bullet.png);
-      }
-    </style>
+    <link rel="stylesheet" href="/style.css?v=1727482701474"/>
   </head>
   <body class="flex flex-col h-full items-center">
     <a href="#skip" class="sr-only">Skip to main content</a>
@@ -90,11 +73,12 @@
       </li>
     </ul>
     <input id="jq-menutoggle" type="checkbox" class="peer/menu hamburger-toggle sr-only"/>
-    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
+    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines cursor-pointer flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </label>
+    <script async src="/menu.js" type="text/javascript"></script>
     <nav class="fixed top-[34px] inset-x-0 bottom-0 bg-gray-dark text-white py-4 lg:relative lg:inset-auto lg:bg-transparent lg:p-0 lg:opacity-100 lg:transform-none peer-checked/menu:opacity-100 peer-checked/menu:transform-none opacity-0 translate-x-full transition-[opacity,transform] overflow-y-auto lg:overflow-visible">
   <ul class="lg:flex lg:flex-row lg:border-l lg:border-l-white/10 lg:border-r lg:border-r-gray-dark">
     <li class="dropdown">
@@ -162,25 +146,6 @@
     </li>
   </ul>
 </nav>
-<script>
-  (function () {
-    const checkbox = document.getElementById('jq-menutoggle')
-    checkbox.addEventListener('change', function () {
-      if (this.checked) {
-        document
-          .body
-          .classList
-          .add('overflow-hidden')
-        document.body.scrollTop = 0
-      } else {
-        document
-          .body
-          .classList
-          .remove('overflow-hidden')
-      }
-    })
-  })()
-</script>
 
   </div>
 </header>
@@ -190,19 +155,6 @@
         <img alt="jQuery Logo" src="/img/logo-white.svg" width="233" height="66"/>
       </a>
       <div id="search" class="relative w-full lg:rounded-t-xl lg:bg-black/20 lg:h-[50px] lg:flex lg:items-center lg:justify-end lg:px-4 lg:shadow-[0_0_5px_rgba(0,0,0,0.7)] lg:border-t lg:border-x lg:border-t-white/30 lg:border-x-black/30"></div>
-<script src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
-<script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    new PagefindUI({
-      element: "#search",
-      showImages: false,
-      translations: {
-        placeholder: 'Search',
-        zero_results: 'No matches found.'
-      }
-    })
-  })
-</script>
 
       <main id="skip" class="relative flex flex-col w-full mt-4 -mb-4 shadow-[-3px_0_5px_-3px_rgb(0,0,0,0.8),3px_0_5px_-3px_rgb(0,0,0,0.8)] bg-white rounded-xl lg:rounded-t-none overflow-hidden lg:mt-0">
         
@@ -339,7 +291,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom">
+                <a class="font-bold font-title" href="/Apycom">
                   1.3.96
                 </a>
               
@@ -351,7 +303,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.96">
+                <a class="font-bold font-title" href="/Apycom/1.3.96">
                   1.3.96
                 </a>
               
@@ -363,7 +315,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.96">
+                <a class="font-bold font-title" href="/Apycom/1.3.96">
                   1.3.96
                 </a>
               
@@ -375,7 +327,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.94">
+                <a class="font-bold font-title" href="/Apycom/1.3.94">
                   1.3.94
                 </a>
               
@@ -387,7 +339,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.94">
+                <a class="font-bold font-title" href="/Apycom/1.3.94">
                   1.3.94
                 </a>
               
@@ -399,7 +351,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.94">
+                <a class="font-bold font-title" href="/Apycom/1.3.94">
                   1.3.94
                 </a>
               
@@ -411,7 +363,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.93">
+                <a class="font-bold font-title" href="/Apycom/1.3.93">
                   1.3.93
                 </a>
               
@@ -423,7 +375,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.93">
+                <a class="font-bold font-title" href="/Apycom/1.3.93">
                   1.3.93
                 </a>
               
@@ -435,7 +387,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.93">
+                <a class="font-bold font-title" href="/Apycom/1.3.93">
                   1.3.93
                 </a>
               
@@ -447,7 +399,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.92">
+                <a class="font-bold font-title" href="/Apycom/1.3.92">
                   1.3.92
                 </a>
               
@@ -459,7 +411,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.92">
+                <a class="font-bold font-title" href="/Apycom/1.3.92">
                   1.3.92
                 </a>
               
@@ -471,7 +423,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.92">
+                <a class="font-bold font-title" href="/Apycom/1.3.92">
                   1.3.92
                 </a>
               
@@ -483,7 +435,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.91">
+                <a class="font-bold font-title" href="/Apycom/1.3.91">
                   1.3.91
                 </a>
               
@@ -495,7 +447,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.91">
+                <a class="font-bold font-title" href="/Apycom/1.3.91">
                   1.3.91
                 </a>
               
@@ -507,7 +459,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.91">
+                <a class="font-bold font-title" href="/Apycom/1.3.91">
                   1.3.91
                 </a>
               
@@ -519,7 +471,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.90">
+                <a class="font-bold font-title" href="/Apycom/1.3.90">
                   1.3.90
                 </a>
               
@@ -531,7 +483,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.90">
+                <a class="font-bold font-title" href="/Apycom/1.3.90">
                   1.3.90
                 </a>
               
@@ -543,7 +495,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.90">
+                <a class="font-bold font-title" href="/Apycom/1.3.90">
                   1.3.90
                 </a>
               
@@ -555,7 +507,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.89">
+                <a class="font-bold font-title" href="/Apycom/1.3.89">
                   1.3.89
                 </a>
               
@@ -567,7 +519,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.89">
+                <a class="font-bold font-title" href="/Apycom/1.3.89">
                   1.3.89
                 </a>
               
@@ -579,7 +531,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.88">
+                <a class="font-bold font-title" href="/Apycom/1.3.88">
                   1.3.88
                 </a>
               
@@ -591,7 +543,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.88">
+                <a class="font-bold font-title" href="/Apycom/1.3.88">
                   1.3.88
                 </a>
               
@@ -603,7 +555,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.87">
+                <a class="font-bold font-title" href="/Apycom/1.3.87">
                   1.3.87
                 </a>
               
@@ -615,7 +567,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.87">
+                <a class="font-bold font-title" href="/Apycom/1.3.87">
                   1.3.87
                 </a>
               
@@ -627,7 +579,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.86">
+                <a class="font-bold font-title" href="/Apycom/1.3.86">
                   1.3.86
                 </a>
               
@@ -639,7 +591,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.86">
+                <a class="font-bold font-title" href="/Apycom/1.3.86">
                   1.3.86
                 </a>
               
@@ -651,7 +603,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.85">
+                <a class="font-bold font-title" href="/Apycom/1.3.85">
                   1.3.85
                 </a>
               
@@ -663,7 +615,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.85">
+                <a class="font-bold font-title" href="/Apycom/1.3.85">
                   1.3.85
                 </a>
               
@@ -675,7 +627,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.84">
+                <a class="font-bold font-title" href="/Apycom/1.3.84">
                   1.3.84
                 </a>
               
@@ -687,7 +639,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.84">
+                <a class="font-bold font-title" href="/Apycom/1.3.84">
                   1.3.84
                 </a>
               
@@ -699,7 +651,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.83">
+                <a class="font-bold font-title" href="/Apycom/1.3.83">
                   1.3.83
                 </a>
               
@@ -711,7 +663,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.83">
+                <a class="font-bold font-title" href="/Apycom/1.3.83">
                   1.3.83
                 </a>
               
@@ -723,7 +675,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.82">
+                <a class="font-bold font-title" href="/Apycom/1.3.82">
                   1.3.82
                 </a>
               
@@ -735,7 +687,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.82">
+                <a class="font-bold font-title" href="/Apycom/1.3.82">
                   1.3.82
                 </a>
               
@@ -747,7 +699,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.81">
+                <a class="font-bold font-title" href="/Apycom/1.3.81">
                   1.3.81
                 </a>
               
@@ -759,7 +711,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.80">
+                <a class="font-bold font-title" href="/Apycom/1.3.80">
                   1.3.80
                 </a>
               
@@ -771,7 +723,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.79">
+                <a class="font-bold font-title" href="/Apycom/1.3.79">
                   1.3.79
                 </a>
               
@@ -783,7 +735,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.78">
+                <a class="font-bold font-title" href="/Apycom/1.3.78">
                   1.3.78
                 </a>
               
@@ -795,7 +747,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.77">
+                <a class="font-bold font-title" href="/Apycom/1.3.77">
                   1.3.77
                 </a>
               
@@ -807,7 +759,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.76">
+                <a class="font-bold font-title" href="/Apycom/1.3.76">
                   1.3.76
                 </a>
               
@@ -819,7 +771,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.75">
+                <a class="font-bold font-title" href="/Apycom/1.3.75">
                   1.3.75
                 </a>
               
@@ -831,7 +783,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.74">
+                <a class="font-bold font-title" href="/Apycom/1.3.74">
                   1.3.74
                 </a>
               
@@ -843,7 +795,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.73">
+                <a class="font-bold font-title" href="/Apycom/1.3.73">
                   1.3.73
                 </a>
               
@@ -855,7 +807,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.72">
+                <a class="font-bold font-title" href="/Apycom/1.3.72">
                   1.3.72
                 </a>
               
@@ -867,7 +819,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.71">
+                <a class="font-bold font-title" href="/Apycom/1.3.71">
                   1.3.71
                 </a>
               
@@ -879,7 +831,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.70">
+                <a class="font-bold font-title" href="/Apycom/1.3.70">
                   1.3.70
                 </a>
               
@@ -891,7 +843,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.69">
+                <a class="font-bold font-title" href="/Apycom/1.3.69">
                   1.3.69
                 </a>
               
@@ -903,7 +855,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.68">
+                <a class="font-bold font-title" href="/Apycom/1.3.68">
                   1.3.68
                 </a>
               
@@ -915,7 +867,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.67">
+                <a class="font-bold font-title" href="/Apycom/1.3.67">
                   1.3.67
                 </a>
               
@@ -927,7 +879,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.66">
+                <a class="font-bold font-title" href="/Apycom/1.3.66">
                   1.3.66
                 </a>
               
@@ -939,7 +891,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.65">
+                <a class="font-bold font-title" href="/Apycom/1.3.65">
                   1.3.65
                 </a>
               
@@ -951,7 +903,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.64">
+                <a class="font-bold font-title" href="/Apycom/1.3.64">
                   1.3.64
                 </a>
               
@@ -963,7 +915,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.63">
+                <a class="font-bold font-title" href="/Apycom/1.3.63">
                   1.3.63
                 </a>
               
@@ -975,7 +927,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.62">
+                <a class="font-bold font-title" href="/Apycom/1.3.62">
                   1.3.62
                 </a>
               
@@ -987,7 +939,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.61">
+                <a class="font-bold font-title" href="/Apycom/1.3.61">
                   1.3.61
                 </a>
               
@@ -999,7 +951,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.60">
+                <a class="font-bold font-title" href="/Apycom/1.3.60">
                   1.3.60
                 </a>
               
@@ -1011,7 +963,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.59">
+                <a class="font-bold font-title" href="/Apycom/1.3.59">
                   1.3.59
                 </a>
               
@@ -1023,7 +975,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.58">
+                <a class="font-bold font-title" href="/Apycom/1.3.58">
                   1.3.58
                 </a>
               
@@ -1035,7 +987,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.57">
+                <a class="font-bold font-title" href="/Apycom/1.3.57">
                   1.3.57
                 </a>
               
@@ -1047,7 +999,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.56">
+                <a class="font-bold font-title" href="/Apycom/1.3.56">
                   1.3.56
                 </a>
               
@@ -1059,7 +1011,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.55">
+                <a class="font-bold font-title" href="/Apycom/1.3.55">
                   1.3.55
                 </a>
               
@@ -1071,7 +1023,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.54">
+                <a class="font-bold font-title" href="/Apycom/1.3.54">
                   1.3.54
                 </a>
               
@@ -1083,7 +1035,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.53">
+                <a class="font-bold font-title" href="/Apycom/1.3.53">
                   1.3.53
                 </a>
               
@@ -1095,7 +1047,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.52">
+                <a class="font-bold font-title" href="/Apycom/1.3.52">
                   1.3.52
                 </a>
               
@@ -1107,7 +1059,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.51">
+                <a class="font-bold font-title" href="/Apycom/1.3.51">
                   1.3.51
                 </a>
               
@@ -1119,7 +1071,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.50">
+                <a class="font-bold font-title" href="/Apycom/1.3.50">
                   1.3.50
                 </a>
               
@@ -1131,7 +1083,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.49">
+                <a class="font-bold font-title" href="/Apycom/1.3.49">
                   1.3.49
                 </a>
               
@@ -1143,7 +1095,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.48">
+                <a class="font-bold font-title" href="/Apycom/1.3.48">
                   1.3.48
                 </a>
               
@@ -1155,7 +1107,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.47">
+                <a class="font-bold font-title" href="/Apycom/1.3.47">
                   1.3.47
                 </a>
               
@@ -1167,7 +1119,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.46">
+                <a class="font-bold font-title" href="/Apycom/1.3.46">
                   1.3.46
                 </a>
               
@@ -1179,7 +1131,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.45">
+                <a class="font-bold font-title" href="/Apycom/1.3.45">
                   1.3.45
                 </a>
               
@@ -1191,7 +1143,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.44">
+                <a class="font-bold font-title" href="/Apycom/1.3.44">
                   1.3.44
                 </a>
               
@@ -1203,7 +1155,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.43">
+                <a class="font-bold font-title" href="/Apycom/1.3.43">
                   1.3.43
                 </a>
               
@@ -1215,7 +1167,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.42">
+                <a class="font-bold font-title" href="/Apycom/1.3.42">
                   1.3.42
                 </a>
               
@@ -1227,7 +1179,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.41">
+                <a class="font-bold font-title" href="/Apycom/1.3.41">
                   1.3.41
                 </a>
               
@@ -1239,7 +1191,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.40">
+                <a class="font-bold font-title" href="/Apycom/1.3.40">
                   1.3.40
                 </a>
               
@@ -1251,7 +1203,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.39">
+                <a class="font-bold font-title" href="/Apycom/1.3.39">
                   1.3.39
                 </a>
               
@@ -1263,7 +1215,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.38">
+                <a class="font-bold font-title" href="/Apycom/1.3.38">
                   1.3.38
                 </a>
               
@@ -1275,7 +1227,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.37">
+                <a class="font-bold font-title" href="/Apycom/1.3.37">
                   1.3.37
                 </a>
               
@@ -1287,7 +1239,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.36">
+                <a class="font-bold font-title" href="/Apycom/1.3.36">
                   1.3.36
                 </a>
               
@@ -1299,7 +1251,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.35">
+                <a class="font-bold font-title" href="/Apycom/1.3.35">
                   1.3.35
                 </a>
               
@@ -1311,7 +1263,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <div class="font-bold font-serif">1.3.34</div>
+                <div class="font-bold font-title">1.3.34</div>
               
             </div>
             <div class="hidden lg:block"></div>
@@ -1321,7 +1273,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.33">
+                <a class="font-bold font-title" href="/Apycom/1.3.33">
                   1.3.33
                 </a>
               
@@ -1333,7 +1285,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.32">
+                <a class="font-bold font-title" href="/Apycom/1.3.32">
                   1.3.32
                 </a>
               
@@ -1345,7 +1297,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.31">
+                <a class="font-bold font-title" href="/Apycom/1.3.31">
                   1.3.31
                 </a>
               
@@ -1357,7 +1309,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.30">
+                <a class="font-bold font-title" href="/Apycom/1.3.30">
                   1.3.30
                 </a>
               
@@ -1369,7 +1321,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.29">
+                <a class="font-bold font-title" href="/Apycom/1.3.29">
                   1.3.29
                 </a>
               
@@ -1381,7 +1333,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.29">
+                <a class="font-bold font-title" href="/Apycom/1.3.29">
                   1.3.29
                 </a>
               
@@ -1393,7 +1345,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.28">
+                <a class="font-bold font-title" href="/Apycom/1.3.28">
                   1.3.28
                 </a>
               
@@ -1405,7 +1357,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.28">
+                <a class="font-bold font-title" href="/Apycom/1.3.28">
                   1.3.28
                 </a>
               
@@ -1417,7 +1369,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.25">
+                <a class="font-bold font-title" href="/Apycom/1.3.25">
                   1.3.25
                 </a>
               
@@ -1429,7 +1381,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.24">
+                <a class="font-bold font-title" href="/Apycom/1.3.24">
                   1.3.24
                 </a>
               
@@ -1441,7 +1393,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.23">
+                <a class="font-bold font-title" href="/Apycom/1.3.23">
                   1.3.23
                 </a>
               
@@ -1453,7 +1405,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.22">
+                <a class="font-bold font-title" href="/Apycom/1.3.22">
                   1.3.22
                 </a>
               
@@ -1465,7 +1417,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.21">
+                <a class="font-bold font-title" href="/Apycom/1.3.21">
                   1.3.21
                 </a>
               
@@ -1477,7 +1429,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.20">
+                <a class="font-bold font-title" href="/Apycom/1.3.20">
                   1.3.20
                 </a>
               
@@ -1489,7 +1441,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.19">
+                <a class="font-bold font-title" href="/Apycom/1.3.19">
                   1.3.19
                 </a>
               
@@ -1501,7 +1453,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.18">
+                <a class="font-bold font-title" href="/Apycom/1.3.18">
                   1.3.18
                 </a>
               
@@ -1513,7 +1465,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.17">
+                <a class="font-bold font-title" href="/Apycom/1.3.17">
                   1.3.17
                 </a>
               
@@ -1525,7 +1477,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.16">
+                <a class="font-bold font-title" href="/Apycom/1.3.16">
                   1.3.16
                 </a>
               
@@ -1537,7 +1489,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.15">
+                <a class="font-bold font-title" href="/Apycom/1.3.15">
                   1.3.15
                 </a>
               
@@ -1549,7 +1501,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.14">
+                <a class="font-bold font-title" href="/Apycom/1.3.14">
                   1.3.14
                 </a>
               
@@ -1561,7 +1513,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.13">
+                <a class="font-bold font-title" href="/Apycom/1.3.13">
                   1.3.13
                 </a>
               
@@ -1573,7 +1525,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.12">
+                <a class="font-bold font-title" href="/Apycom/1.3.12">
                   1.3.12
                 </a>
               
@@ -1585,7 +1537,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.11">
+                <a class="font-bold font-title" href="/Apycom/1.3.11">
                   1.3.11
                 </a>
               
@@ -1597,7 +1549,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.10">
+                <a class="font-bold font-title" href="/Apycom/1.3.10">
                   1.3.10
                 </a>
               
@@ -1609,7 +1561,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.9">
+                <a class="font-bold font-title" href="/Apycom/1.3.9">
                   1.3.9
                 </a>
               
@@ -1621,7 +1573,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.8">
+                <a class="font-bold font-title" href="/Apycom/1.3.8">
                   1.3.8
                 </a>
               
@@ -1633,7 +1585,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.7">
+                <a class="font-bold font-title" href="/Apycom/1.3.7">
                   1.3.7
                 </a>
               
@@ -1645,7 +1597,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.6">
+                <a class="font-bold font-title" href="/Apycom/1.3.6">
                   1.3.6
                 </a>
               
@@ -1657,7 +1609,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.5">
+                <a class="font-bold font-title" href="/Apycom/1.3.5">
                   1.3.5
                 </a>
               
@@ -1669,7 +1621,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.4">
+                <a class="font-bold font-title" href="/Apycom/1.3.4">
                   1.3.4
                 </a>
               
@@ -1681,7 +1633,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.3">
+                <a class="font-bold font-title" href="/Apycom/1.3.3">
                   1.3.3
                 </a>
               
@@ -1693,7 +1645,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.2">
+                <a class="font-bold font-title" href="/Apycom/1.3.2">
                   1.3.2
                 </a>
               
@@ -1705,7 +1657,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.1">
+                <a class="font-bold font-title" href="/Apycom/1.3.1">
                   1.3.1
                 </a>
               
@@ -1717,7 +1669,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.3.0">
+                <a class="font-bold font-title" href="/Apycom/1.3.0">
                   1.3.0
                 </a>
               
@@ -1729,7 +1681,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.2.12">
+                <a class="font-bold font-title" href="/Apycom/1.2.12">
                   1.2.12
                 </a>
               
@@ -1741,7 +1693,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.2.11">
+                <a class="font-bold font-title" href="/Apycom/1.2.11">
                   1.2.11
                 </a>
               
@@ -1753,7 +1705,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.2.10">
+                <a class="font-bold font-title" href="/Apycom/1.2.10">
                   1.2.10
                 </a>
               
@@ -1765,7 +1717,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.2.9">
+                <a class="font-bold font-title" href="/Apycom/1.2.9">
                   1.2.9
                 </a>
               
@@ -1777,7 +1729,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.2.8">
+                <a class="font-bold font-title" href="/Apycom/1.2.8">
                   1.2.8
                 </a>
               
@@ -1789,7 +1741,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.2.7">
+                <a class="font-bold font-title" href="/Apycom/1.2.7">
                   1.2.7
                 </a>
               
@@ -1801,7 +1753,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.2.6">
+                <a class="font-bold font-title" href="/Apycom/1.2.6">
                   1.2.6
                 </a>
               
@@ -1813,7 +1765,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.2.5">
+                <a class="font-bold font-title" href="/Apycom/1.2.5">
                   1.2.5
                 </a>
               
@@ -1825,7 +1777,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.2.4">
+                <a class="font-bold font-title" href="/Apycom/1.2.4">
                   1.2.4
                 </a>
               
@@ -1837,7 +1789,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.2.3">
+                <a class="font-bold font-title" href="/Apycom/1.2.3">
                   1.2.3
                 </a>
               
@@ -1849,7 +1801,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.2.2">
+                <a class="font-bold font-title" href="/Apycom/1.2.2">
                   1.2.2
                 </a>
               
@@ -1861,7 +1813,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.2.1">
+                <a class="font-bold font-title" href="/Apycom/1.2.1">
                   1.2.1
                 </a>
               
@@ -1873,7 +1825,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.1.10">
+                <a class="font-bold font-title" href="/Apycom/1.1.10">
                   1.1.10
                 </a>
               
@@ -1885,7 +1837,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.1.8">
+                <a class="font-bold font-title" href="/Apycom/1.1.8">
                   1.1.8
                 </a>
               
@@ -1897,7 +1849,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.1.7">
+                <a class="font-bold font-title" href="/Apycom/1.1.7">
                   1.1.7
                 </a>
               
@@ -1909,7 +1861,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.1.6">
+                <a class="font-bold font-title" href="/Apycom/1.1.6">
                   1.1.6
                 </a>
               
@@ -1921,7 +1873,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.1.5">
+                <a class="font-bold font-title" href="/Apycom/1.1.5">
                   1.1.5
                 </a>
               
@@ -1933,7 +1885,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.1.4">
+                <a class="font-bold font-title" href="/Apycom/1.1.4">
                   1.1.4
                 </a>
               
@@ -1945,7 +1897,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.1.3">
+                <a class="font-bold font-title" href="/Apycom/1.1.3">
                   1.1.3
                 </a>
               
@@ -1957,7 +1909,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/Apycom/1.1.2">
+                <a class="font-bold font-title" href="/Apycom/1.1.2">
                   1.1.2
                 </a>
               
@@ -1973,7 +1925,7 @@
   <div class="flex flex-col w-full bg-sidebar-gradient gap-4 border-l border-l-white-dark lg:pl-5 lg:max-w-[330px]">
 
     <div class="w-full rounded-lg border border-black bg-black shadow-[0_0_5px_rgba(0,0,0,0.5)]">
-      <div class="flex flex-col w-full border border-gray-light rounded-lg bg-[#202020] text-white font-bold font-serif">
+      <div class="flex flex-col w-full border border-gray-light rounded-lg bg-[#202020] text-white font-bold font-title">
 
         <div class="flex flex-col py-2 px-4">
           <div class="flex flex-row justify-between items-center">
@@ -2017,7 +1969,7 @@
 
         GitHub Activity
       </h3>
-      <div class="flex flex-row gap-3 font-extrabold font-serif text-center">
+      <div class="flex flex-row gap-3 font-extrabold font-title text-center">
         <div class="flex flex-col">
           <div class="py-[2px] px-2 rounded-t bg-black leading-tight text-white text-4xl">11</div>
           <div class="py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -2153,5 +2105,6 @@
   </div>
 </footer>
 
+    <script async src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
   </body>
 </html>

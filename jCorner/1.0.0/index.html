@@ -11,24 +11,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
-    <link rel="stylesheet" href="/style.css?v=1713837929437"/>
-    
-    <style type="text/css">
-      @font-face {
-        font-family: Cairo;
-        src: url(/fonts/Cairo/Cairo-Bold.ttf) format("truetype");
-        font-weight: bold;
-      }
-      .bg-dark-tiles {
-        background-image: url(/img/dark-grey-tile.png);
-      }
-      .pagefind-ui__form:after {
-        background: url(/img/search.svg) no-repeat 2px center;
-      }
-      .list-custom-bullet {
-        list-style-image: url(/img/bullet.png);
-      }
-    </style>
+    <link rel="stylesheet" href="/style.css?v=1727482701474"/>
   </head>
   <body class="flex flex-col h-full items-center">
     <a href="#skip" class="sr-only">Skip to main content</a>
@@ -90,11 +73,12 @@
       </li>
     </ul>
     <input id="jq-menutoggle" type="checkbox" class="peer/menu hamburger-toggle sr-only"/>
-    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
+    <label aria-label="Toggle Menu" for="jq-menutoggle" class="hamburger-lines cursor-pointer flex lg:hidden flex-col justify-between relative w-[18px] h-[14px]">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </label>
+    <script async src="/menu.js" type="text/javascript"></script>
     <nav class="fixed top-[34px] inset-x-0 bottom-0 bg-gray-dark text-white py-4 lg:relative lg:inset-auto lg:bg-transparent lg:p-0 lg:opacity-100 lg:transform-none peer-checked/menu:opacity-100 peer-checked/menu:transform-none opacity-0 translate-x-full transition-[opacity,transform] overflow-y-auto lg:overflow-visible">
   <ul class="lg:flex lg:flex-row lg:border-l lg:border-l-white/10 lg:border-r lg:border-r-gray-dark">
     <li class="dropdown">
@@ -162,25 +146,6 @@
     </li>
   </ul>
 </nav>
-<script>
-  (function () {
-    const checkbox = document.getElementById('jq-menutoggle')
-    checkbox.addEventListener('change', function () {
-      if (this.checked) {
-        document
-          .body
-          .classList
-          .add('overflow-hidden')
-        document.body.scrollTop = 0
-      } else {
-        document
-          .body
-          .classList
-          .remove('overflow-hidden')
-      }
-    })
-  })()
-</script>
 
   </div>
 </header>
@@ -190,19 +155,6 @@
         <img alt="jQuery Logo" src="/img/logo-white.svg" width="233" height="66"/>
       </a>
       <div id="search" class="relative w-full lg:rounded-t-xl lg:bg-black/20 lg:h-[50px] lg:flex lg:items-center lg:justify-end lg:px-4 lg:shadow-[0_0_5px_rgba(0,0,0,0.7)] lg:border-t lg:border-x lg:border-t-white/30 lg:border-x-black/30"></div>
-<script src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
-<script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    new PagefindUI({
-      element: "#search",
-      showImages: false,
-      translations: {
-        placeholder: 'Search',
-        zero_results: 'No matches found.'
-      }
-    })
-  })
-</script>
 
       <main id="skip" class="relative flex flex-col w-full mt-4 -mb-4 shadow-[-3px_0_5px_-3px_rgb(0,0,0,0.8),3px_0_5px_-3px_rgb(0,0,0,0.8)] bg-white rounded-xl lg:rounded-t-none overflow-hidden lg:mt-0">
         
@@ -285,7 +237,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <a class="font-bold font-serif" href="/jCorner">
+                <a class="font-bold font-title" href="/jCorner">
                   1.1.0
                 </a>
               
@@ -297,7 +249,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-3 border-t p-2 border-border hover:bg-white-dark odd:bg-white-dark">
             <div>
               
-                <div class="font-bold font-serif">1.0.0</div>
+                <div class="font-bold font-title">1.0.0</div>
               
             </div>
             <div class="hidden lg:block"></div>
@@ -311,7 +263,7 @@
   <div class="flex flex-col w-full bg-sidebar-gradient gap-4 border-l border-l-white-dark lg:pl-5 lg:max-w-[330px]">
 
     <div class="w-full rounded-lg border border-black bg-black shadow-[0_0_5px_rgba(0,0,0,0.5)]">
-      <div class="flex flex-col w-full border border-gray-light rounded-lg bg-[#202020] text-white font-bold font-serif">
+      <div class="flex flex-col w-full border border-gray-light rounded-lg bg-[#202020] text-white font-bold font-title">
 
         <div class="flex flex-col py-2 px-4">
           <div class="flex flex-row justify-between items-center">
@@ -365,7 +317,7 @@
 
         GitHub Activity
       </h3>
-      <div class="flex flex-row gap-3 font-extrabold font-serif text-center">
+      <div class="flex flex-row gap-3 font-extrabold font-title text-center">
         <div class="flex flex-col">
           <div class="py-[2px] px-2 rounded-t bg-black leading-tight text-white text-4xl">46</div>
           <div class="py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
@@ -490,5 +442,6 @@
   </div>
 </footer>
 
+    <script async src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
   </body>
 </html>
