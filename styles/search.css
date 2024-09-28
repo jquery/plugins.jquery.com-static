@@ -11,6 +11,7 @@
   justify-content: center;
   align-items: center;
   width: 24px;
+  background: url('/img/search.svg') no-repeat 2px center;
   height: 16px;
   border-left: 1px solid rgba(0, 0, 0, 0.6);
   transform: translateY(-50%);

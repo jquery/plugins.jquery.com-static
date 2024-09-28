@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
+        'dark-tiles': 'url(/img/dark-grey-tile.png)',
         'sidebar-gradient':
           'radial-gradient(ellipse at left, #f2f2f2, #ffffff 80%)',
         'sidebar-header-gradient': 'linear-gradient(to right, #efefef, #f3f3f3)'
@@ -66,7 +67,12 @@ module.exports = {
       fontFamily: {
         ...defaultTheme.fontFamily,
         sans: ['Helvetica Neue', 'Helvetica', ...defaultTheme.fontFamily.sans],
-        serif: ['Cairo', ...defaultTheme.fontFamily.serif]
+        title: [
+          'Cairo',
+          'Arial-Adjusted',
+          'Helvetica',
+          ...defaultTheme.fontFamily.sans
+        ]
       }
     }
   }

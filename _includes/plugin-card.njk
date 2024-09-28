@@ -1,6 +1,6 @@
 <div class="flex flex-col gap-4 lg:flex-row py-3 px-5 border border-border rounded mb-2 bg-gray-lightest">
   <div class="flex flex-col grow gap-4">
-    <a class="text-xl font-bold font-serif" href="{{ plugin.url }}">{{ plugin.name }}</a>
+    <a class="text-xl font-bold font-title" href="{{ plugin.url }}">{{ plugin.name }}</a>
     <p>{{ plugin.description }}</p>
   </div>
   <div class="flex flex-col gap-4 shrink-0">
@@ -8,7 +8,7 @@
       <p>{{ plugin.latest }}</p>
       <p>Released {{ plugin.date | readableDate }}</p>
     </div>
-    <div class="flex flex-row gap-4 font-bold font-serif text-center">
+    <div class="flex flex-row gap-4 font-bold font-title text-center">
       <div class="flex flex-col w-[80px]">
         <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">{{ watchers[plugin.id].watchers }}</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>

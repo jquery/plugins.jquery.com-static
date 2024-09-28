@@ -5,6 +5,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-display: swap;
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: bold;
+  src:
+    local('Cairo Bold') /* Full name */,
+    local('Cairo-Bold') /* PostScript name */,
+    url('/fonts/cairo-v28-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+@font-face {
+  font-family: 'Adjusted Arial Fallback';
+  src: local(Arial);
+  size-adjust: 55%;
+  ascent-override: normal;
+  descent-override: normal;
+  line-gap-override: 88%;
+}
+
 @layer base {
   body {
     @apply text-gray;
@@ -16,7 +35,7 @@
   h4,
   h5,
   h6 {
-    @apply font-serif font-bold;
+    @apply font-title font-bold;
   }
   h1 {
     @apply text-2xl lg:text-4xl;
@@ -61,7 +80,7 @@
 @layer components {
   /* Links */
   .link-white {
-    @apply flex flex-row items-center gap-2 font-serif text-lg text-white hover:underline;
+    @apply font-title flex flex-row items-center gap-2 text-lg text-white hover:underline;
   }
   .link-white svg {
     @apply fill-blue-light h-[24px] w-[24px];
@@ -174,4 +193,8 @@ pre[class*='language-'] code {
 
 main p {
   margin-bottom: 0.5rem;
+}
+
+.list-custom-bullet {
+  list-style-image: url('/img/bullet.png');
 }

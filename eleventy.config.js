@@ -1,13 +1,11 @@
-import { DateTime } from 'luxon'
-
-import pluginSyntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
-import pluginNavigation from '@11ty/eleventy-navigation'
 import { EleventyHtmlBasePlugin } from '@11ty/eleventy'
+import pluginNavigation from '@11ty/eleventy-navigation'
+import pluginSyntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import pluginFavicon from 'eleventy-favicon'
-import path from 'node:path'
+import { DateTime } from 'luxon'
 import { exec } from 'node:child_process'
 import { createHash } from 'node:crypto'
-
+import path from 'node:path'
 import pluginImages from './eleventy.config.images.js'
 
 const now = String(Date.now())

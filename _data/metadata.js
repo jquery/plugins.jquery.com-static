@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   title: 'The jQuery Plugin Registry',
   url: 'https://plugins.jquery.com/',
   language: 'en',

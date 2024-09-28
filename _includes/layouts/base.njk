@@ -10,23 +10,6 @@
     <meta name="description" content="{{ description or metadata.description }}">
     {% favicon './public/favicon.svg' %}
     <link rel="stylesheet" href="/style.css?v={% version %}"/>
-    {# Insert styles dependent on path prefix here #}
-    <style type="text/css">
-      @font-face {
-        font-family: Cairo;
-        src: url({{ '/fonts/Cairo/Cairo-Bold.ttf' | url }}) format("truetype");
-        font-weight: bold;
-      }
-      .bg-dark-tiles {
-        background-image: url({{ '/img/dark-grey-tile.png' | url }});
-      }
-      .pagefind-ui__form:after {
-        background: url({{ '/img/search.svg' | url }}) no-repeat 2px center;
-      }
-      .list-custom-bullet {
-        list-style-image: url({{ '/img/bullet.png' | url }});
-      }
-    </style>
   </head>
   <body class="flex flex-col h-full items-center">
     <a href="#skip" class="sr-only">Skip to main content</a>
@@ -41,5 +24,6 @@
       </main>
     </div>
     {% include "footer.njk" %}
+    <script async src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
   </body>
 </html>
