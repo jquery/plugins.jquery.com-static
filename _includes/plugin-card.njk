@@ -9,12 +9,12 @@
       <p>Released {{ plugin.date | readableDate }}</p>
     </div>
     <div class="flex flex-row gap-4 font-bold font-title text-center">
-      <div class="flex flex-col w-[80px]">
-        <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">{{ watchers[plugin.id].watchers }}</div>
+      <div class="flex flex-col w-20">
+        <div class="w-full py-0.5 px-2 rounded-t bg-black text-white text-sm">{{ watchers[plugin.id].watchers }}</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Watchers</div>
       </div>
-      <div class="flex flex-col w-[80px]">
-        <div class="w-full py-[2px] px-2 rounded-t bg-black text-white text-sm">{{ watchers[plugin.id].forks }}</div>
+      <div class="flex flex-col w-20">
+        <div class="w-full py-0.5 px-2 rounded-t bg-black text-white text-sm">{{ watchers[plugin.id].forks }}</div>
         <div class="w-full py-1 px-2 rounded-b bg-blue-light text-xs uppercase">Forks</div>
       </div>
     </div>
