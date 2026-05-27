@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "clean": "rimraf _site/ && mkdir -p _site",
-    "build": "npm run clean && cross-env ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
+    "build": "cross-env ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
     "postbuild": "npm run searchindex && cross-env NODE_ENV=production npm run tailwind -- --minify",
     "start": "npm run clean && bash dev.sh",
     "debug": "npm run clean && cross-env NODE_ENV=development DEBUG=Eleventy* npx @11ty/eleventy",
