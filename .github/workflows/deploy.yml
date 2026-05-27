@@ -32,7 +32,7 @@ jobs:
       DEPLOY_BRANCH: gh-pages
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           submodules: recursive
 
@@ -43,9 +43,9 @@ jobs:
           # Clone and checkout existing branch, or initialise with a new and empty branch
           git clone --depth 5 --branch "${DEPLOY_BRANCH}" "https://github.com/${GITHUB_REPOSITORY}.git" . || git init -b "${DEPLOY_BRANCH}"
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Install Node.js dependencies
         run: npm ci

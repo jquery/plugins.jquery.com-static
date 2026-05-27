@@ -1,9 +1,82 @@
 @import './prism.css';
 @import './search.css';
+@import 'tailwindcss';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@source '../content/**/*.{njk,md}';
+@source '../_includes/**/*.njk';
+
+@theme {
+  --color-background: #0769ad;
+
+  --color-blue: #305e91;
+  --color-blue-hover: #3d76b8;
+  --color-blue-light: #8ccffa;
+
+  --color-border: rgb(0 0 0 / 0.2);
+  --color-border-dark: #333333;
+  --color-border-light: #cccccc;
+
+  --color-button: #0f67a1;
+  --color-button-hover: #0e3a58;
+
+  --color-gray: #333333;
+  --color-gray-dark: #242424;
+  --color-gray-darker: #191919;
+  --color-gray-light: #666666;
+  --color-gray-lighter: #999999;
+  --color-gray-lightest: #eeeeee;
+
+  --color-link: #0769ad;
+  --color-link-hover: #0e3a58;
+  --color-link-active: #1695e9;
+  --color-link-visited: #0f67a1;
+  --color-link-light: #e6e6e6;
+
+  --color-list: #4d4d4d;
+
+  --color-footer-text: #aaaaaa;
+  --color-footer-text-hover: #e6e6e6;
+
+  --color-warning: #ffffaa;
+
+  --color-white-dark: #f2f2f2;
+  --color-white-hover: #e6e6e6;
+  --color-white-active: #cccccc;
+
+  --font-sans:
+    'Helvetica Neue', 'Helvetica', ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-title:
+    'Cairo', 'Arial-Adjusted', 'Helvetica', ui-sans-serif, system-ui,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+
+  --shadow-border: #000000 0 -1px 0;
+}
+
+@utility bg-dark-tiles {
+  background-image: url(/img/dark-grey-tile.png);
+}
+@utility bg-sidebar-gradient {
+  background-image: radial-gradient(ellipse at left, #f2f2f2, #ffffff 80%);
+}
+@utility bg-sidebar-header-gradient {
+  background-image: linear-gradient(to right, #efefef, #f3f3f3);
+}
+
+/*
+  Preserve v3 default border color (gray-200) instead of v4's currentColor,
+  so existing `border-*` utilities render the same.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 @font-face {
   font-display: swap;
@@ -83,15 +156,15 @@
     @apply font-title flex flex-row items-center gap-2 text-lg text-white hover:underline;
   }
   .link-white svg {
-    @apply fill-blue-light h-[24px] w-[24px];
+    @apply fill-blue-light h-6 w-6;
   }
   .link-nav {
-    @apply border-b-border text-link-light flex h-[34px] items-center justify-start border-b px-3 text-[13px] drop-shadow-sm;
-    @apply whitespace-nowrap no-underline lg:border-x lg:border-b-0 lg:border-l-black/30 lg:border-r-white/10;
-    @apply hover:bg-gray-dark active:bg-gradient-to-b active:from-black/10 active:to-white/10;
+    @apply border-b-border text-link-light flex h-8.5 items-center justify-start border-b px-3 text-[13px] drop-shadow-sm;
+    @apply whitespace-nowrap no-underline lg:border-x lg:border-b-0 lg:border-r-white/10 lg:border-l-black/30;
+    @apply hover:bg-gray-dark active:bg-linear-to-b active:from-black/10 active:to-white/10;
   }
   .link-nav.link-nav-mobile {
-    @apply w-[40px] justify-center border-x border-b-0 border-l-black/30 border-r-white/10 px-0;
+    @apply w-10 justify-center border-x border-b-0 border-r-white/10 border-l-black/30 px-0;
   }
   .link-footer {
     @apply text-footer-text flex flex-row items-center gap-2 transition-[color];
@@ -104,7 +177,7 @@
     @apply fill-footer-text-hover;
   }
   .link-sidebar {
-    @apply text-[#4d4d4d] no-underline hover:underline;
+    @apply text-list no-underline hover:underline;
   }
 
   /* Buttons */
@@ -114,7 +187,7 @@
     @apply active:shadow-[inset_0_0_0.5rem_1px_rgba(0,0,0,0.7)];
   }
   .btn-tag {
-    @apply flex flex-row items-center gap-1 rounded px-2 py-[2px];
+    @apply flex flex-row items-center gap-1 rounded px-2 py-0.5;
     @apply bg-blue hover:bg-blue-hover;
   }
 
@@ -123,7 +196,7 @@
     @apply hover:bg-gray-dark relative;
   }
   .dropdown ul {
-    @apply lg:bg-gray-dark pl-4 lg:absolute lg:left-0 lg:top-full lg:hidden lg:p-0;
+    @apply lg:bg-gray-dark pl-4 lg:absolute lg:top-full lg:left-0 lg:hidden lg:p-0;
   }
   .dropdown:hover ul {
     @apply lg:block;
